@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}TurmAluno{% endblock %}
 
 {% block body %}
-    <a class="btn btn-default text" href="{{ path('index') }}">Voltar</a>
+    <a class="btn btn-default text" href="{{ path('turmaluno_index', {'tur':turma.id,'facul':facul}) }}">Voltar</a>
     <hr>
     <div class="row text">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
-                <div class="panel-heading">User</div>
+                <div class="panel-heading">TurmAluno</div>
                 <div class="panel-body">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}

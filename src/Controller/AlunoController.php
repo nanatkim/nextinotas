@@ -20,6 +20,8 @@ class AlunoController extends Controller
      */
     public function index(AlunoRepository $alunoRepository, int $facul): Response
     {
+        //$algo = $request->query->get('algo','default');
+
         $faculdade = $this->getDoctrine()
             ->getRepository('App:Faculdade')
             ->find($facul);

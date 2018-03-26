@@ -63,7 +63,7 @@ class TurmAlunoController extends Controller
             return $this->redirectToRoute('turmaluno_index',['tur'=>$tur, 'facul'=>$facul]);
         }
 
-        return $this->render('turmaluno/new.html.twig', [
+        return $this->render('turmaluno/form.html.twig', [
             'turmaluno' => $turmAluno,
             'turma' => $turma,
             'facul'=>$facul,
@@ -93,22 +93,20 @@ class TurmAlunoController extends Controller
             return $this->redirectToRoute('turmaluno_edit', ['id' => $turmAluno->getId()]);
         }
 
-        return $this->render('turmaluno/edit.html.twig', [
+        return $this->render('turmaluno/form.html.twig', [
             'turmaluno' => $turmAluno,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{facul}/{tur}/{id}", name="turmaluno_delete", methods="DELETE")
+     * @Route("/delete/{facul}/{tur}/{id}", name="turmaluno_delete")
      */
     public function delete(Request $request, TurmAluno $turmAluno, int $tur, int $facul): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$turmAluno->getId(), $request->request->get('_token'))) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($turmAluno);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($turmAluno);
+        $em->flush();
 
         return $this->redirectToRoute('turmaluno_index',['tur'=>$tur,'facul'=>$facul]);
     }

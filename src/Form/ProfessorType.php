@@ -28,7 +28,13 @@ class ProfessorType extends AbstractType
                     'style' => 'margin-bottom:15px'
                 ]
             ])
-        ;
+            ->add('submit', SubmitType::class,[
+                'label' => 'Done',
+                'attr' => [
+                    'class' => 'btn btn-primary',
+                    'style' => 'margin-bottom:15px'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

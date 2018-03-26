@@ -35,6 +35,13 @@ class AlunoType extends AbstractType
                     'class' => 'form-control',
                     'style' => 'margin-bottom:15px'
                 ]
+            ])
+            ->add('submit', SubmitType::class,[
+                'label' => 'Done',
+                'attr' => [
+                    'class' => 'btn btn-primary',
+                    'style' => 'margin-bottom:15px'
+                ]
             ]);
     }
 
