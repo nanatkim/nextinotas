@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AvTipo{% endblock %}
+
+{% block body %}
+    <div class="container text">
+        <a class="btn btn-default" href="{{ path('faculdade_show',{'id':faculdade.id}) }}">Voltar</a>
+        <hr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list"></span>Tipos de Avaliações
+                <div class="pull-right">
+                    <a href="{{ path('avtipo_new', {'facul':faculdade.id}) }}"><img src="{{ asset('web/add.png') }}" height="20px" width="20px"></a>     Adicionar Disciplina</div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {% for avtipo in avtipos %}
+                        <li class="list-group-item">
+                            <label>
+                                {{ avtipo.tipo }}
+                            </label>
+                            <div class="pull-right action-buttons">
+                                <a href="{{ path('avtipo_edit', {'id': avtipo.id, 'facul':faculdade.id}) }}">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <a href="{{ path('avtipo_delete', {'id': avtipo.id, 'facul':faculdade.id}) }}" class="trash">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            </div>
+                        </li>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">Ainda não existe nenhum tipo de avaliação cadastrado.</td>
+                        </tr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>
+                            Total de Tipos de Avaliações <span class="label label-info">{{ qtd }}</span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
