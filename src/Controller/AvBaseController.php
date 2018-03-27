@@ -62,7 +62,7 @@ class AvBaseController extends Controller
             $em->persist($avBase);
             $em->flush();
 
-            return $this->redirectToRoute('turma_show',array('facul'=>$facul, 'id'=>$tur));
+            return $this->redirectToRoute('avbase_index',array('facul'=>$facul, 'tur'=>$tur));
         }
 
         return $this->render('avbase/form.html.twig', [
@@ -113,7 +113,7 @@ class AvBaseController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('turma_show',array('facul'=>$facul, 'id'=>$tur));
+            return $this->redirectToRoute('avbase_index',array('facul'=>$facul, 'tur'=>$tur));
         }
 
         return $this->render('avbase/form.html.twig', [
@@ -129,7 +129,6 @@ class AvBaseController extends Controller
      */
     public function delete(Request $request, int $facul, int $tur, AvBase $avBase): Response
     {
-
          $em = $this->getDoctrine()->getManager();
          $em->remove($avBase);
          $em->flush();

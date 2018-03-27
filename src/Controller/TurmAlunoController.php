@@ -60,7 +60,7 @@ class TurmAlunoController extends Controller
             $em->persist($turmAluno);
             $em->flush();
 
-            return $this->redirectToRoute('turmaluno_index',['tur'=>$tur, 'facul'=>$facul]);
+            return $this->redirectToRoute('turma_show',array('facul'=>$facul, 'id'=>$tur));
         }
 
         return $this->render('turmaluno/form.html.twig', [
@@ -87,10 +87,14 @@ class TurmAlunoController extends Controller
         $form = $this->createForm(TurmAlunoType::class, $turmAluno);
         $form->handleRequest($request);
 
+        $turma = $this->getDoctrine()
+            ->getRepository('App:Turma')
+            ->find($tur);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('turmaluno_edit', ['id' => $turmAluno->getId()]);
+            return $this->redirectToRoute('turma_show',array('facul'=>$turma->getIdFacul()->getId(), 'id'=>$tur));
         }
 
         return $this->render('turmaluno/form.html.twig', [
@@ -108,6 +112,6 @@ class TurmAlunoController extends Controller
         $em->remove($turmAluno);
         $em->flush();
 
-        return $this->redirectToRoute('turmaluno_index',['tur'=>$tur,'facul'=>$facul]);
+        return $this->redirectToRoute('turma_show',array('facul'=>$facul, 'id'=>$tur));
     }
 }
