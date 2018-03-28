@@ -6,24 +6,23 @@
     <div class="container text">
         <a class="btn btn-default" href="{{ path('avbase_index', {'facul': turma.faculdade.id,'tur':turma.id}) }}">Voltar</a>
         <hr>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">Notas?</div>
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Aluno</th>
+                        <th>{{ avbase.idTipo.tipo }}</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for rel in relacoes %}
                         <tr>
                             <th scope="row">{{ rel.idAluno.nome }}</th>
-                            <td>{{ rel.idTurma.disciplina.nome }}</td>
+                            {#<td>{{ rel.idTurma.disciplina.nome }}</td>#}
                             {% for av in avaliacao %}
-                                {% if rel.idAluno.id == av.idAluno.id and av.idAvbase.id == avbase.id %}
+                                {% if rel.idAluno.id == av.idAluno.idAluno.id and av.idAvbase.id == avbase.id %}
                                     <td>{{ av.nota }}</td>
                                 {#{% elseif av.idAvbase.id == avbase.id %}#}
                                      {#<td>#}
