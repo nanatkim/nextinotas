@@ -10,15 +10,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TurmAluno
 {
-//    /**
-//     * @ORM\OneToMany(targetEntity="AvAluno", mappedBy="turmaluno", cascade={"persist","remove"})
-//     */
-//    private $avaluno;
-//
-//    public function __constructAvAluno()
-//    {
-//        $this->avaluno = new ArrayCollection();
-//    }
+    /**
+     * @ORM\OneToMany(targetEntity="AvAluno", mappedBy="idAluno", cascade={"persist","remove"})
+     */
+    private $avaluno;
+
+    public function __constructAvAluno()
+    {
+        $this->avaluno = new ArrayCollection();
+    }
 
     /**
      * @var int

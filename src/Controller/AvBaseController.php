@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\AvBase;
+use App\Entity\Faculdade;
+use App\Entity\Turma;
 use App\Form\AvBaseType;
 use App\Repository\AvBaseRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AvBaseController extends Controller
 {
     /**
-     * @Route("/{facul}/{tur}/", name="avbase_index", methods="GET")
+     * @Route("/{facul}/{tur}/", name="avbase_index", methods="GET|POST")
      */
     public function index(AvBaseRepository $avBaseRepository, int $facul, int $tur): Response
     {
@@ -74,23 +76,25 @@ class AvBaseController extends Controller
     }
 
     /**
-     * @Route("/{facul}/{tur}/{id}", name="avbase_show", methods="GET")
+     * @Route("/{facul}/{tur}/{id}", name="avbase_show", methods="GET|POST")
      */
-    public function show(AvBase $avBase, int $facul, int  $tur): Response
+    public function show(AvBase $avBase, Faculdade $facul, Turma  $tur): Response
     {
 
-        $turma = $this->getDoctrine()
-            ->getRepository('App:Turma')
-            ->find($tur);
+        $turmaluno = $this->getDoctrine()
+            ->getRepository('App:TurmAluno')
+            ->findByIdTurma($tur);
 
-        $faculdade = $this->getDoctrine()
-            ->getRepository('App:Faculdade')
-            ->find($facul);
+        $avaliacao = $this->getDoctrine()
+            ->getRepository('App:AvAluno')
+            ->findByIdAvbase($avBase);
 
         return $this->render('avbase/show.html.twig', [
             'avbase' => $avBase,
-            'faculdade' => $faculdade,
-            'turma' => $turma
+            'avaliacao' =>$avaliacao,
+            'faculdade' => $facul,
+            'relacoes' => $turmaluno,
+            'turma' => $tur
         ]);
     }
 

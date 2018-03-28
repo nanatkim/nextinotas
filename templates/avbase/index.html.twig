@@ -18,11 +18,14 @@
                 <ul class="list-group">
                     {% for av in avbases %}
                         <li class="list-group-item">
-                            <div href="#collapseExample{{ av.id }}" class="panel-heading clickable"
-                                 data-toggle="collapse" aria-expanded="11" aria-controls="collapseExample{{ av.id }}">
-                                <label>
-                                    {{ av.descricao }} - {{ av.notaMax }}
-                                </label>
+                            <div class="row">
+                                <a href="{{ path('avbase_show', {'id': av.id, 'facul':faculdade.id,'tur':turma.id}) }}">
+                                    <div class="col-md-6">
+                                        <label>
+                                            {{ av.descricao }} - {{ av.notaMax }}
+                                        </label>
+                                    </div>
+                                </a>
                                 <div class="pull-right action-buttons">
                                     <a href="{{ path('avbase_edit',{'facul':faculdade.id,'tur':turma.id, 'id':av.id}) }}">
                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -31,17 +34,7 @@
                                        class="trash">
                                         <span class="glyphicon glyphicon-trash"></span>
                                     </a>
-                                    <a href="#" class="btn btn-default">Nota</a>
                                 </div>
-
-                            </div>
-                            <div class="panel-body collapse" id="collapseExample{{ av.id }}">
-                                <ul>
-                                    <li>Tipo: {{ av.idTipo.tipo }}</li>
-                                    <li>Data: umadataai</li>
-                                    <li>Nota: {{ av.notaMax }}</li>
-                                    <li>Turma: {{ av.idTurma.disciplina.nome }}</li>
-                                </ul>
                             </div>
                         </li>
                     {% else %}

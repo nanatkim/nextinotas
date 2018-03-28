@@ -3,24 +3,39 @@
 {% block title %}AvBase{% endblock %}
 
 {% block body %}
-    <h1>AvBase</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ avbase.id }}</td>
-            </tr>
-            <tr>
-                <th>NotaMax</th>
-                <td>{{ avbase.notaMax }}</td>
-            </tr>
-            <tr>
-                <th>Descricao</th>
-                <td>{{ avbase.descricao }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    {{ include('avbase/_delete_form.html.twig') }}
+    <div class="container text">
+        <a class="btn btn-default" href="{{ path('avbase_index', {'facul': turma.faculdade.id,'tur':turma.id}) }}">Voltar</a>
+        <hr>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">Notas?</div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for rel in relacoes %}
+                        <tr>
+                            <th scope="row">{{ rel.idAluno.nome }}</th>
+                            <td>{{ rel.idTurma.disciplina.nome }}</td>
+                            {% for av in avaliacao %}
+                                {% if rel.idAluno.id == av.idAluno.id and av.idAvbase.id == avbase.id %}
+                                    <td>{{ av.nota }}</td>
+                                {#{% elseif av.idAvbase.id == avbase.id %}#}
+                                     {#<td>#}
+                                         {#<a href="{{ path('avaluno_new',{'facul':turma.faculdade.id,'turma':turma.id,'avbase':avbase.id,'aluno':rel.idAluno.id}) }}" class="btn btn-default">Nota</a>#}
+                                     {#</td>#}
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}
