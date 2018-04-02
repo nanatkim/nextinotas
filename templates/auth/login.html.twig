@@ -1,0 +1,37 @@
+<div class="container" id="body">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="circle-tile-heading2 dark-blue centroLogin">
+            </div>
+            <form class="form-horizontal" role="form" method="POST" action="{{ path('security_login_check') }}">
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error.messageKey|trans(error.messageData) }}
+                    </div>
+                {% endif %}
+                <div class="boxlogin">
+                    <h4 class="textWhite">Sistema de Notas</h4>
+                    <input type="text" id="login" name="_email" class="form-control" placeholder="Login"
+                           value="{{ last_username }}"/>
+                    <br>
+                    <input type="password" id="senha" name="_password" class="form-control" placeholder="Senha"/>
+                    <br>
+                    <div class="wrapper">
+            <span class="group-btn">
+                <button type="submit" class="btn btn-primary btn-md">Entrar <i class="fa fa-sign-in"></i></button>
+            </span>
+                    </div>
+                    </br>
+                    <div class="wrapper">
+            <span class="group-btn">
+                <a href="/register" class="btn btn-primary btn-md">Cadastrar <i class="fa fa-sign-up"></i></a>
+            </span>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <br>
+    </div>
+</div>
+</div>

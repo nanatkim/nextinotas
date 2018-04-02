@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Turma{% endblock %}
+
+{% block body %}
+    <div class="container text">
+        <div class="row">
+            <div class="col-md-10">
+                <a class="btn btn-default" href="{{ path('turma_index',{'facul':faculdade.id, 'tur':turma.id}) }}">Voltar</a>
+            </div>
+            <div class= "pull right turde">
+                Turma: {{ turma.disciplina.nome }} <br>
+                Professor: {{ turma.professor.nome }}<br>
+                Semestre: {{ turma.semestreTurma }}
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="box1">
+                    {{ render (controller('App\\Controller\\AvBaseController:index',{'facul':faculdade.id,'tur':turma.id})) }}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box4">
+                    <div class="col-lg-10 col-sm-10">
+                        <div class="circle-tile">
+                            <a href="{{ path('turmaluno_index',{'tur':turma.id, 'facul':faculdade.id}) }}">
+                                <div class="circle-tile-heading centroTurmAluno">
+                                </div>
+                            </a>
+                            <a href="{{ path('turmaluno_index',{'tur':turma.id, 'facul':faculdade.id}) }}">
+                                <div class="circle-tile-content dark-blue">
+                                    <div class="circle-tile-number text-faded">
+                                        Aluno
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box4">
+                    <div class="col-lg-10 col-sm-10">
+                        <div class="circle-tile">
+                            <a href="/{{turma.id}}/avaluno?facul={{ faculdade.id }}">
+                                <div class="circle-tile-heading centroNotas">
+                                </div>
+                            </a>
+                            <a href="/{{turma.id}}/avaluno?facul={{ faculdade.id }}">
+                                <div class="circle-tile-content dark-blue">
+                                    <div class="circle-tile-number text-faded">
+                                        Nota
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

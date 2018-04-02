@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Disciplina{% endblock %}
+
+{% block body %}
+    <div class="container text">
+        <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id}) }}">Voltar</a>
+        <hr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list"></span>Lista de Disciplinas
+                <div class="pull-right">
+                    <a href="{{ path('disciplina_new', {'facul':faculdade.id}) }}"><img src="{{ asset('web/add.png') }}" height="20px" width="20px"></a>     Adicionar Disciplina</div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {% for disciplina in disciplinas %}
+                        <li class="list-group-item">
+                            <label>
+                                {{ disciplina.nome }}
+                            </label>
+                            <div class="pull-right action-buttons">
+                                <a href="{{ path('disciplina_edit', {'id': disciplina.id, 'facul':faculdade.id}) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="{{ path('disciplina_delete', {'id': disciplina.id, 'facul':faculdade.id}) }}" class="trash"><span
+                                            class="glyphicon glyphicon-trash"></span></a>
+                            </div>
+                        </li>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">Ainda não existem disciplinas cadastradas.</td>
+                        </tr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>
+                            Total de Disciplinas <span class="label label-info">{{ qtd }}</span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

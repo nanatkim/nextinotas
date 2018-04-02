@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AvTipo{% endblock %}
+
+{% block body %}
+    <h1>AvTipo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ avtipo.id }}</td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ avtipo.tipo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('avtipo_index',{'facul':faculdade.id}) }}">back to list</a>
+
+    <a href="{{ path('avtipo_edit', {'id': avtipo.id,'facul':faculdade.id}) }}">edit</a>
+
+    {{ include('avtipo/_delete_form.html.twig') }}
+{% endblock %}

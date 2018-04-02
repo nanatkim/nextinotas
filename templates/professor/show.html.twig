@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professor{% endblock %}
+
+{% block body %}
+    <h1>Professor</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ professor.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ professor.nome }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ professor.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('professor_index',{'facul':faculdade.id}) }}">back to list</a>
+
+    <a href="{{ path('professor_edit', {'id': professor.id,'facul':faculdade.id}) }}">edit</a>
+
+    {{ include('professor/_delete_form.html.twig') }}
+{% endblock %}
