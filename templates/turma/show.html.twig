@@ -43,6 +43,28 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="box4">
+                    <div class="col-lg-10 col-sm-10">
+                        <div class="circle-tile">
+
+                            <a href="{{ path('avbase_index', {'tur':turma.id,'facul':faculdade.id}) }}?avbase=5">
+                                <div class="circle-tile-heading centroNotas">
+                                </div>
+                            </a>
+                            <a href="{{ path('avbase_index', {'tur':turma.id,'facul':faculdade.id}) }}?avbase=5">
+                                <div class="circle-tile-content dark-blue">
+                                    <div class="circle-tile-number text-faded">
+                                        Nota
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 {% endblock %}
