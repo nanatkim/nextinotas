@@ -1,50 +1,57 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <span class="glyphicon glyphicon-list"></span>Lista de Avaliação
-        <div class="pull-right">
-            <a href="{{ path('avbase_new',{'facul':faculdade.id,'tur':turma.id}) }}"><img src="{{ asset('img/add.png') }}" height="20px" width="20px"></a>     Adicionar Avaliação
-        </div>
-    </div>
-    <div class="panel-body">
-        <ul class="list-group">
-            {% for av in avbases %}
-                <li class="list-group-item">
-                    <div href="#collapseExample{{av.id}}" class="panel-heading clickable" data-toggle="collapse" aria-expanded="11"  aria-controls="collapseExample{{av.id}}">
-                        <label>
-                            {{ av.descricao }} - {{ av.notaMax }}
-                        </label>
-                        <div class="pull-right action-buttons">
-                            <a href="{{ path('avbase_edit',{'facul':faculdade.id,'tur':turma.id, 'id':av.id}) }}">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                            </a>
-                            <a href="{{ path('avbase_delete',{'facul':faculdade.id,'tur':turma.id, 'id':av.id}) }}" class="trash">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </a>
-                        </div>
+{% extends 'base.html.twig' %}
 
+{% block title %}Avaliações{% endblock %}
+
+{% block body %}
+    <div class="container text">
+        <a class="btn btn-default" href="{{ path('turma_show', {'id': turma.id, 'facul':faculdade.id}) }}">Voltar</a>
+        <hr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list"></span>Lista de Avaliação
+                <div class="pull-right">
+                    <a href="{{ path('avbase_new',{'facul':faculdade.id,'tur':turma.id}) }}"><img
+                                src="{{ asset('img/add.png') }}" height="20px" width="20px"></a> Adicionar Avaliação
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {% for av in avbases %}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <a href="{{ path('avbase_show', {'id': av.id, 'facul':faculdade.id,'tur':turma.id}) }}">
+                                    <div class="col-md-6">
+                                        <label>
+                                            {{ av.descricao }} - {{ av.notaMax }}
+                                        </label>
+                                    </div>
+                                </a>
+                                <div class="pull-right action-buttons">
+                                    <a href="{{ path('avbase_edit',{'facul':faculdade.id,'tur':turma.id, 'id':av.id}) }}">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </a>
+                                    <a href="{{ path('avbase_delete',{'facul':faculdade.id,'tur':turma.id, 'id':av.id}) }}"
+                                       class="trash">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">Ainda não existe nenhuma avaliação nessa turma.</td>
+                        </tr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>
+                            Total de Avaliacao <span class="label label-info">{{ qtd }}</span></h6>
                     </div>
-                    <div class="panel-body collapse" id="collapseExample{{av.id}}">
-                        <ul>
-                            <li>Tipo: {{ av.idTipo.tipo }}</li>
-                            <li>Data: umadataai  </li>
-                            <li>Nota: {{ av.notaMax }}</li>
-                            <li>Turma: {{ av.idTurma.disciplina.nome }}</li>
-                        </ul>
-                    </div>
-                </li>
-            {% else %}
-                <tr>
-                    <td colspan="3">Ainda não existe nenhuma avaliação nessa turma.</td>
-                </tr>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="panel-footer">
-        <div class="row">
-            <div class="col-md-6">
-                <h6>
-                    Total de Avaliacao <span class="label label-info">{{ qtd }}</span></h6>
+                </div>
             </div>
         </div>
     </div>
-</div>
+{% endblock %}

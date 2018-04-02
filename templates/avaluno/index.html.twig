@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container text">
+        <a class="btn btn-default" href="{{ path('turma_show', {'facul': turma.faculdade.id,'id':turma.id}) }}">Voltar</a>
+        <hr>
+        <div class="panel panel-default">
+            <div class="panel-heading">Notas?</div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for rel in relacoes %}
+                    <tr>
+                        <th scope="row">{{ rel.idAluno.idAluno.nome }}</th>
+                        <td>{{ rel.nota }}</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

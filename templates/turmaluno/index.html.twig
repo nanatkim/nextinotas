@@ -1,15 +1,9 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}TurmAluno{% endblock %}
-
-{% block body %}
-    <div class="container text">
-        <a class="btn btn-default" href="{{ path('turma_show', {'id': tur, 'facul':faculdade.id}) }}">Voltar</a>
-        <hr>
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <span class="glyphicon glyphicon-list"></span>Alunos nessa Turma
-                <div class="pull-right">
+                <span class="glyphicon glyphicon-list"></span>Alunos
+
+<div class="pull-right">
                     <a href="{{ path('turmaluno_new', {'tur': tur, 'facul':faculdade.id}) }}"><img src="{{ asset('img/add.png') }}" height="20px" width="20px"></a>     Adicionar Aluno</div>
             </div>
             <div class="panel-body">
@@ -20,7 +14,9 @@
                                 {{ rel.idAluno.nome }}
                             </label>
                             <div class="pull-right action-buttons">
-                                <a href="{{ path('turmaluno_edit', {'tur':tur, 'id': rel.id, 'facul':faculdade.id}) }}" class="trash">
+
+                                <a href="{{ path('turmaluno_delete', {'tur':tur, 'id': rel.id, 'facul':faculdade.id}) }}" class="trash">
+
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
                             </div>
@@ -36,10 +32,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h6>
-                            Total de Alunos cadastrados <span class="label label-info">{{ qtd }}</span></h6>
+
+                            Total de Alunos <span class="label label-info">{{ qtd }}</span></h6>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-{% endblock %}

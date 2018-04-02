@@ -365,8 +365,12 @@ a.clickable:hover { text-decoration:none; }
 
 .box4{
     margin-left: 80px;
+<<<<<<< HEAD
     margin-top: 30px;
     margin-bottom: 100px;
+=======
+    margin-top: 40px;
+>>>>>>> ab64b6230d5f337b34869491e5791df77dff98a9
     margin-right: 10px;
 }
 
