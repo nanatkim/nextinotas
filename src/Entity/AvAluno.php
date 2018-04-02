@@ -31,7 +31,7 @@ class AvAluno
 
     /**
      * @ORM\ManyToOne(targetEntity="TurmAluno", cascade={"persist"}, inversedBy="avaluno")
-     * @ORM\JoinColumn(name="id_aluno", referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_turm_aluno", referencedColumnName="id")
      */
     private $idAluno;
 

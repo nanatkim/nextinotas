@@ -43,7 +43,7 @@ class AvAlunoController extends Controller
     /**
      * @Route("/{avbase}/{aluno}/{facul}/{turma}/new", name="avaluno_new", methods="GET|POST")
      */
-    public function new(Request $request, int $turma, Faculdade $facul, AvBase $avbase, int $aluno): Response
+    public function new(Request $request,AvBase $avbase,int $aluno,Faculdade $facul, int $turma): Response
     {
         $avaluno = new AvAluno();
         $form = $this->createForm(AvAlunoType::class, $avaluno);
