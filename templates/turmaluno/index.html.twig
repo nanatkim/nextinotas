@@ -10,15 +10,27 @@
                 <ul class="list-group">
                     {% for rel in turmalunos %}
                         <li class="list-group-item">
-                            <label>
-                                {{ rel.idAluno.nome }}
-                            </label>
-                            <div class="pull-right action-buttons">
-
-                                <a href="{{ path('turmaluno_delete', {'tur':tur, 'id': rel.id, 'facul':faculdade.id}) }}" class="trash">
-
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </a>
+                            <div class="row">
+                                <div class="col-md-10" data-toggle="collapse"
+                                     href="#collapseExample{{ rel.id }}"
+                                     aria-expanded="false" aria-controls="collapseExample{{ rel.id }}">
+                                    <label>{{ rel.idAluno.nome }}</label>
+                                </div>
+                                <div class="col-md-1 pull-right action-buttons">
+                                    <a href="{{ path('turmaluno_delete', {'tur':tur, 'id': rel.id, 'facul':faculdade.id}) }}" class="trash">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="collapse" id="collapseExample{{ rel.id }}">
+                                <div class="card card-block">
+                                    <ul>
+                                        <li>Nome: {{ rel.idAluno.nome }}</li>
+                                        <li>Matricula: {{ rel.idAluno.matricula }}</li>
+                                        <li>Semestre: {{ rel.idAluno.semestre }}</li>
+                                        <li>Faculdade: {{ rel.idAluno.faculdade.nome }}</li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                     {% else %}
