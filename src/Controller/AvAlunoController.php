@@ -90,12 +90,21 @@ class AvAlunoController extends Controller
             ->getRepository('App:Turma')
             ->find($turma);
 
+        $turmaluno = $this->getDoctrine()
+            ->getRepository('App:TurmAluno')
+            ->findByIdTurma($turma);
+
+        $avbase = $this->getDoctrine()
+            ->getRepository('App:AvBase')
+            ->findByIdTurma($turma);
+
         $avaluno = $this->getDoctrine()
             ->getRepository('App:AvAluno')
-            ->findByIdAluno($turma);
+            ->findByIdAvbase($avbase);
 
         return $this->render('avaluno/show.html.twig', [
             'avaluno'=>$avaluno,
+            'turmaluno'=>$turmaluno,
             'faculdade'=>$facul,
             'turma'=>$turma
         ]);
