@@ -370,12 +370,12 @@ a.clickable:hover { text-decoration:none; }
 }
 
 .centroTurmaAluno {
-    background: url("aluno.png") no-repeat center;
+    background: url("aval.png") no-repeat center;
     background-size:74px 74px;
 }
 
 .centroNotas {
-    background: url("writing.png") no-repeat center;
+    background: url("media.png") no-repeat center;
     background-size:74px 74px;
 }
 
