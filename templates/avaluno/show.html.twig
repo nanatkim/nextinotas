@@ -1,1 +1,50 @@
-<3
+{% extends base.html.twig %}
+{% block body %}
+  <main>
+  <div class="box3">
+      <section class="container">
+      <div class="panel-heading">
+          <h2>Notas</h2>
+          <label for="filtrar-tabela">Procurar</label>
+          <input type ="text" name="filtro" id ="filtrar-tabela" placeholder="Digite o nome do aluno">
+          <table>
+          <!-- for lista de alunos}}-->
+              <thead><!-- for atributos de aluno}}-->
+                  <tr>
+                      <th>Nome</th>
+                      <th>Matricula</th>
+                      <!-- for do av_tipo}}-->
+                      <th>AV</th>
+                      <!-- endfor do av_tipo}}-->
+                  </tr>
+              </thead>
+              <!-- for atributos de aluno}}-->
+              <tbody id="tabela-alunos">
+                  <tr class="aluno" id = "primeiro" >
+                      <td class="info-nome">ababa</td>
+                      <td class="info-matricula"></td>
+                      <!-- for notas_aluno}}-->
+                      <td class="info-nota">2.00</td>
+                      <!--end for notas aluno}}-->
+                  </tr>
+                  <!-- end for atributos de aluno}}-->
+
+                  <tr class="aluno" id = "segundo" >
+                      <td class="info-nome">re</td>
+                      <td class="info-matricula"></td>
+                      <!-- {{for notas_aluno}}-->
+                      <td class="info-nota">2.00</td>
+                      <!--{{end for notas aluno}}-->
+                  </tr>
+              </tbody>
+              <!-- {{end for lista de alunos}}-->
+          </table>
+      </section>
+      </div>
+  </main>
+
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('web/js.js') }}"></script>
+{% endblock %}

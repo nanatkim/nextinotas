@@ -29,7 +29,7 @@
                         <div class="circle-tile">
 
                             <a href="{{ path('avbase_index', {'tur':turma.id,'facul':faculdade.id}) }}?avbase=5">
-                                <div class="circle-tile-heading centroNotas">
+                                <div class="circle-tile-heading centroTurmaAluno">
                                 </div>
                             </a>
                             <a href="{{ path('avbase_index', {'tur':turma.id,'facul':faculdade.id}) }}?avbase=5">
@@ -49,11 +49,11 @@
                     <div class="col-lg-10 col-sm-10">
                         <div class="circle-tile">
 
-                            <a href="{{ path('avbase_index', {'tur':turma.id,'facul':faculdade.id}) }}?avbase=5">
+                            <a href="{{ path('avaluno_show', {'turma':turma.id,'facul':faculdade.id}) }}?avbase=5">
                                 <div class="circle-tile-heading centroNotas">
                                 </div>
                             </a>
-                            <a href="{{ path('avbase_index', {'tur':turma.id,'facul':faculdade.id}) }}?avbase=5">
+                            <a href="{{ path('avaluno_show', {'turma':turma.id,'facul':faculdade.id}) }}?avbase=5">
                                 <div class="circle-tile-content dark-blue">
                                     <div class="circle-tile-number text-faded">
                                         Nota

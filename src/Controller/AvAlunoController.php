@@ -76,4 +76,28 @@ class AvAlunoController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/{facul}/{turma}", name="avaluno_show", methods="GET|POST")
+     */
+    public function show($facul,$turma){
+
+        $faculdade = $this->getDoctrine()
+        ->getRepository('App:Faculdade')
+        ->find($facul);
+
+        $turma = $this->getDoctrine()
+            ->getRepository('App:Turma')
+            ->find($turma);
+
+        $avaluno = $this->getDoctrine()
+            ->getRepository('App:AvAluno')
+            ->findByIdAluno($turma);
+
+        return $this->render('avaluno/show.html.twig', [
+            'avaluno'=>$avaluno,
+            'faculdade'=>$facul,
+            'turma'=>$turma
+        ]);
+    }
 }

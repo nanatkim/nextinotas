@@ -369,7 +369,7 @@ a.clickable:hover { text-decoration:none; }
     margin-right: 10px;
 }
 
-.centroTurmAluno {
+.centroTurmaAluno {
     background: url("aluno.png") no-repeat center;
     background-size:74px 74px;
 }
@@ -377,4 +377,14 @@ a.clickable:hover { text-decoration:none; }
 .centroNotas {
     background: url("writing.png") no-repeat center;
     background-size:74px 74px;
+}
+
+#filtrar-tabela{
+	width: 200px;
+	height: 35px;
+	margin-bottom: 15px;
+}
+
+.invisible{
+	display: none;
 }
