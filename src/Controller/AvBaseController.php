@@ -6,7 +6,6 @@ use App\Entity\AvBase;
 
 use App\Entity\Faculdade;
 use App\Entity\Turma;
-
 use App\Form\AvBaseType;
 use App\Repository\AvBaseRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
