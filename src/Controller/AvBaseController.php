@@ -65,8 +65,7 @@ class AvBaseController extends Controller
             $em->persist($avBase);
             $em->flush();
 
-
-            return $this->redirectToRoute('avbase_index',array('facul'=>$facul, 'tur'=>$tur));
+            return $this->redirectToRoute('avaluno_new',array('avbase'=>$avBase->getId(),'facul'=>$facul, 'turma'=>$tur));
 
         }
 

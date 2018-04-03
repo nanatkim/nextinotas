@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Avaluno;
+use App\Entity\AvAluno;
 use App\Entity\AvBase;
 use App\Entity\Faculdade;
 use App\Entity\Turma;
@@ -41,11 +41,37 @@ class AvAlunoController extends Controller
     }
 
     /**
-     * @Route("/{avbase}/{aluno}/{facul}/{turma}/new", name="avaluno_new", methods="GET|POST")
+     * @Route("/{avbase}/{facul}/{turma}/new", name="avaluno_new", methods="GET|POST")
      */
-    public function new(Request $request,AvBase $avbase,int $aluno,Faculdade $facul, int $turma): Response
+    public function new(Request $request,AvBase $avbase,Faculdade $facul, int $turma): Response
     {
-        $avaluno = new AvAluno();
+        $aluno = $this->getDoctrine()
+            ->getRepository('App:TurmAluno')
+            ->findAll();
+
+        $turma = $this->getDoctrine()
+            ->getRepository('App:Turma')
+            ->find($turma);
+
+        foreach ($aluno as $al){
+            $avaluno = new AvAluno();
+            $avaluno->setIdAluno($al);
+            $avaluno->setIdAvbase($avbase);
+            $avaluno->setNota(0);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($avaluno);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('avbase_index',array('facul'=>$facul->getId(), 'tur'=>$turma->getId()));
+    }
+
+    /**
+     * @Route("/{avbase}/{aluno}/{facul}/{turma}/{avaluno}/edit", name="avaluno_edit", methods="GET|POST")
+     */
+    public function edit(Request $request,AvBase $avbase,int $aluno,Faculdade $facul, int $turma,AvAluno $avaluno): Response
+    {
         $form = $this->createForm(AvAlunoType::class, $avaluno);
         $form->handleRequest($request);
 
@@ -98,6 +124,18 @@ class AvAlunoController extends Controller
             ->getRepository('App:AvBase')
             ->findByIdTurma($turma);
 
+        $avp1 = $this->getDoctrine()
+            ->getRepository('App:AvBase')
+            ->findBy(array('descricao' => 'AVPI', 'idTurma' => $turma));
+
+        $avp2 = $this->getDoctrine()
+            ->getRepository('App:AvBase')
+            ->findBy(array('descricao' => 'AVPII', 'idTurma' => $turma));
+
+        $avf = $this->getDoctrine()
+            ->getRepository('App:AvBase')
+            ->findBy(array('descricao' => 'AVPF', 'idTurma' => $turma));
+
         $avaluno = $this->getDoctrine()
             ->getRepository('App:AvAluno')
             ->findByIdAvbase($avbase);
@@ -105,7 +143,10 @@ class AvAlunoController extends Controller
         return $this->render('avaluno/show.html.twig', [
             'avaluno'=>$avaluno,
             'turmaluno'=>$turmaluno,
-            'faculdade'=>$facul,
+            'faculdade'=>$faculdade,
+            'avp1' => $avp1,
+            'avp2' => $avp2,
+            'avf' => $avf,
             'turma'=>$turma
         ]);
     }

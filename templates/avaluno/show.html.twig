@@ -1,61 +1,69 @@
 {% extends 'base.html.twig' %}
 {% block body %}
   <main>
-  <div class="box3">
+      <a class="btn btn-default" href="{{ path('turma_show', {'id': turma.id, 'facul':faculdade.id}) }}">Voltar</a>
+      <hr>
       <section class="container">
           <div class="panel-heading">
               <h2>Notas</h2>
               <label for="filtrar-tabela">Procurar</label>
-              <input type ="text" name="filtro" id ="filtrar-tabela" placeholder="Digite o nome do aluno">
-              <table class="table">
-                  <thead><!-- for atributos de aluno}}-->
-                      <tr>
-                          <th>Nome</th>
-                          <th>Matricula</th>
-                          <!-- for do av_tipo}}-->
-                          <th>AVPI</th>
-                          <th>AVPII</th>
-                          <th>AVF</th>
-                          <!-- endfor do av_tipo}}-->
-                      </tr>
-                  </thead>
-                  <!-- for atributos de aluno}}-->
-                  <tbody id="tabela-alunos">
-                  {% for aluno in turmaluno %}
-                      <tr class="aluno" id = "primeiro">
-                          <td class="info-nome">{{ aluno.idAluno.nome }}</td>
-                          <td class="info-matricula">{{ aluno.idAluno.matricula }}</td>
-                          <!-- for notas_aluno}}-->
-                          {% for av in avaluno %}
-                              {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPI" %}
-                                  <td class="info-nota">{{ av.nota }}</td>
-                              {% elseif av.idAvbase.descricao == "AVPI" and (av.idAluno.idAluno.id == aluno.idAluno.id) is null %}
-                                  <td>Sem nota</td>
-                              {% endif %}
+              <input class="form-control" type ="text" name="filtro" id="filtrar-tabela" placeholder="nome do aluno">
+              <div class="row">
+                  <div class="panel panel-default">
+                      <table class="table table-responsive">
+                          <thead><!-- for atributos de aluno}}-->
+                          <tr>
+                              <th>Nome</th>
+                              <th>Matricula</th>
+                              <!-- for do av_tipo}}-->
+                              {% for av in avp1 %}
+                                  <th>{{ av.idTipo.tipo }}</th>
+                              {% endfor %}
+                              <th>AVPI</th>
+                              {% for av in avp2 %}
+                                  <th>{{ av.idTipo.tipo }}</th>
+                              {% endfor %}
+                              <th>AVPII</th>
+                              {% for av in avf %}
+                                  <th>{{ av.idTipo.tipo }}</th>
+                              {% endfor %}
+                              <th>AVF</th>
+                              <th>MF</th>
+                              <!-- endfor do av_tipo}}-->
+                          </tr>
+                          </thead>
+                          <!-- for atributos de aluno}}-->
+                          <tbody id="tabela-alunos">
+                          {% for aluno in turmaluno %}
+                              <tr class="aluno" id = "primeiro">
+                                  <td class="info-nome">{{ aluno.idAluno.nome }}</td>
+                                  <td class="info-matricula">{{ aluno.idAluno.matricula }}</td>
+                                  <!-- for notas_aluno}}-->
+                                  {% for av in avaluno %}
+                                      {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPI" %}
+                                          <td class="info-nota">{{ av.nota }}</td>
+                                      {% endif %}
+                                  {% endfor %}
+                                  {% for av in avaluno %}
+                                      {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPII" %}
+                                          <td class="info-nota">{{ av.nota }}</td>
+                                      {% endif %}
+                                  {% endfor %}
+                                  {% for av in avaluno %}
+                                      {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVF" %}
+                                          <td class="info-nota">{{ av.nota }}</td>
+                                      {% endif %}
+                                  {% endfor %}
+                                  <!--end for notas aluno}}-->
+                              </tr>
                           {% endfor %}
-                          {% for av in avaluno %}
-                              {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPII" %}
-                                  <td class="info-nota">{{ av.nota }}</td>
-                              {% elseif av.idAvbase.descricao == "AVPII" and (av.idAluno.idAluno.id == aluno.idAluno.id) is null %}
-                                  <td>Sem nota</td>
-                              {% endif %}
-                          {% endfor %}
-                          {% for av in avaluno %}
-                              {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVF" %}
-                                  <td class="info-nota">{{ av.nota }}</td>
-                              {% elseif av.idAvbase.descricao == "AVF"  and (av.idAluno.idAluno.id == aluno.idAluno.id) is null %}
-                                  <td>Sem nota</td>
-                              {% endif %}
-                          {% endfor %}
-                          <!--end for notas aluno}}-->
-                      </tr>
-                  {% endfor %}
-                      <!-- end for atributos de aluno}}-->
-                  </tbody>
-              </table>
+                          <!-- end for atributos de aluno}}-->
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
           </div>
       </section>
-      </div>
   </main>
 
 {% endblock %}
