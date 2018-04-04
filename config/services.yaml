@@ -4,6 +4,9 @@ parameters:
     locale: 'en'
 
 services:
+    app.security_login_authenticator:
+        class: App\Security\SecurityLoginAuthenticator
+        arguments: ["@router", "@security.password_encoder"]
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

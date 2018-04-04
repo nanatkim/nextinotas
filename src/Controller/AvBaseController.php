@@ -80,7 +80,7 @@ class AvBaseController extends Controller
     /**
      * @Route("/{facul}/{tur}/{id}", name="avbase_show", methods="GET|POST")
      */
-    public function show(AvBase $avBase, Faculdade $facul, Turma  $tur): Response
+    public function show(Faculdade $facul, Turma  $tur,AvBase $avBase): Response
     {
 
         $turmaluno = $this->getDoctrine()

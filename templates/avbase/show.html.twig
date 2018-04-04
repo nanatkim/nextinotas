@@ -24,11 +24,10 @@
                             {% for av in avaliacao %}
                                 {% if rel.idAluno.id == av.idAluno.idAluno.id and av.idAvbase.id == avbase.id %}
                                     <td>{{ av.nota }}</td>
+                                    <td>
+                                        <a href="{{ path('avaluno_edit',{'facul':turma.faculdade.id,'turma':turma.id,'avbase':avbase.id,'aluno':av.id}) }}" class="btn btn-default">Nota</a>
+                                    </td>
                                 {% endif %}
-                            {% else %}
-                                <td>
-                                    <a href="{{ path('avaluno_new',{'facul':turma.faculdade.id,'turma':turma.id,'avbase':avbase.id,'aluno':rel.idAluno.id}) }}" class="btn btn-default">Nota</a>
-                                </td>
                             {% endfor %}
                         </tr>
                     {% endfor %}

@@ -68,11 +68,11 @@ class AvAlunoController extends Controller
     }
 
     /**
-     * @Route("/{avbase}/{aluno}/{facul}/{turma}/{avaluno}/edit", name="avaluno_edit", methods="GET|POST")
+     * @Route("/{avbase}/{aluno}/{facul}/{turma}/edit", name="avaluno_edit", methods="GET|POST")
      */
-    public function edit(Request $request,AvBase $avbase,int $aluno,Faculdade $facul, int $turma,AvAluno $avaluno): Response
+    public function edit(Request $request,AvBase $avbase,AvAluno $aluno,Faculdade $facul, int $turma): Response
     {
-        $form = $this->createForm(AvAlunoType::class, $avaluno);
+        $form = $this->createForm(AvAlunoType::class, $aluno);
         $form->handleRequest($request);
 
         $aluno = $this->getDoctrine()
@@ -84,18 +84,14 @@ class AvAlunoController extends Controller
             ->find($turma);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $avaluno->setIdAluno($aluno);
-            $avaluno->setIdAvbase($avbase);
-
             $em = $this->getDoctrine()->getManager();
-            $em->persist($avaluno);
             $em->flush();
 
-            return $this->redirectToRoute('avbase_show',array('facul'=>$facul, 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
+            return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
         }
 
         return $this->render('avaluno/form.html.twig', [
-            'avaluno'=>$avaluno,
+            'aluno'=>$aluno,
             'faculdade'=>$facul,
             'turma'=>$turma,
             'avbase'=>$avbase,
