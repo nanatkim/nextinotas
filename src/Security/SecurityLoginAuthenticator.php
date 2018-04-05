@@ -33,7 +33,7 @@ class SecurityLoginAuthenticator extends AbstractGuardAuthenticator
             return;
         }
 
-        $email = $request->request->get('_email');
+        $email = $request->request->get('_username');
         $request->getSession()->set(Security::LAST_USERNAME, $email);
         $password = $request->request->get('_password');
 

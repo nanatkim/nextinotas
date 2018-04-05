@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    {#{% if app.user == null %}#}
-        {#{{ render (controller('AppBundle:Security:login')) }}#}
-    {#{% else %}#}
-        {#{{ render (controller('AppBundle:Faculdade:viewFaculdade')) }}#}
-    {#{% endif %}#}
-    {{ render (controller('App\\Controller\\FaculdadeController::index')) }}
+    {% if app.user == null %}
+        {{ render (controller('App\\Controller\\SecurityController::loginAction')) }}
+    {% else %}
+        {{ render (controller('App\\Controller\\FaculdadeController::index')) }}
+    {% endif %}
+    {#{{ render (controller('App\\Controller\\FaculdadeController::index')) }}#}
 {% endblock %}
