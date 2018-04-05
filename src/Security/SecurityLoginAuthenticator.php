@@ -117,7 +117,7 @@ class SecurityLoginAuthenticator extends AbstractGuardAuthenticator
             'message' => 'Authentication Required'
         );
 
-        return new RedirectResponse('/login',['data'=>$data]);
+        return new RedirectResponse('/index',['data'=>$data]);
     }
 
     /**

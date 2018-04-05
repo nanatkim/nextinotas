@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Professor;
 use App\Entity\User;
 use App\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -28,12 +29,25 @@ class RegistrationController extends Controller
             // Set their role
             $user->setRole('ROLE_USER');
 
+            // Set Professor
+
+            $professor = $this->getDoctrine()
+                ->getRepository('App:Professor')
+                ->findByFaculdade($form->get('faculdade')->getData());
+
+            foreach ($professor as $prof ){
+                if($prof->getEmail() == $form->get('email')->getData()){
+                    $user->setProfessor($prof);
+                    break;
+                }
+            }
+
             // Save
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('index');
         }
 
         return $this->render('user/form.html.twig', [

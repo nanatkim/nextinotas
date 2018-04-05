@@ -32,6 +32,18 @@ class User implements UserInterface
     protected $name;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Faculdade", cascade={"persist"}, inversedBy="user")
+     * @ORM\JoinColumn(name="id_facul", referencedColumnName="id")
+     */
+    private $faculdade;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Professor", cascade={"persist"}, inversedBy="user")
+     * @ORM\JoinColumn(name="id_professor", referencedColumnName="id")
+     */
+    private $professor;
+
+    /**
      * @ORM\Column(type="string", length=50)
      */
     protected $role;
@@ -119,5 +131,53 @@ class User implements UserInterface
     public function getSalt()
     {
         return null;
+    }
+
+    /**
+     * Get faculdade
+     *
+     * @return Faculdade
+     */
+    public function getFaculdade()
+    {
+        return $this->faculdade;
+    }
+
+    /**
+     * Set faculdade
+     *
+     * @param integer $faculdade
+     *
+     * @return Faculdade
+     */
+    public function setFaculdade($faculdade)
+    {
+        $this->faculdade = $faculdade;
+
+        return $this;
+    }
+
+    /**
+     * Get professor
+     *
+     * @return Professor
+     */
+    public function getProfessor()
+    {
+        return $this->professor;
+    }
+
+    /**
+     * Set professor
+     *
+     * @param integer $professor
+     *
+     * @return Professor
+     */
+    public function setProfessor($professor)
+    {
+        $this->professor = $professor;
+
+        return $this;
     }
 }

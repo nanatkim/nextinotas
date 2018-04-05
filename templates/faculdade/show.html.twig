@@ -9,11 +9,11 @@
         <div class="box">
             <div class="col-lg-4 col-sm-9">
                 <div class="circle-tile">
-                    <a href="{{ path('turma_index',{ 'facul': faculdade.id }) }}">
+                    <a href="{{ path('turma_index',{ 'facul': faculdade.id, 'prof': app.user.professor.id }) }}">
                         <div class="circle-tile-heading dark-blue centroTeamWork">
                         </div>
                     </a>
-                    <a href="{{ path('turma_index',{ 'facul': faculdade.id }) }}">
+                    <a href="{{ path('turma_index',{ 'facul': faculdade.id, 'prof': app.user.professor.id}) }}">
                         <div class="circle-tile-content dark-blue">
 
                             <div class="circle-tile-number text-faded">

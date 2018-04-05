@@ -2,6 +2,8 @@
 {% block body %}
     {% if app.user == null %}
         {{ render (controller('App\\Controller\\SecurityController::loginAction')) }}
+    {#{% elseif is_granted('ROLE_USER') %}#}
+        {#{{ render (controller('App\\Controller\\FaculdadeController::show', {'id': app.user.faculdade.id})) }}#}
     {% else %}
         {{ render (controller('App\\Controller\\FaculdadeController::index')) }}
     {% endif %}

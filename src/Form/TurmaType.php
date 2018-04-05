@@ -33,17 +33,6 @@ class TurmaType extends AbstractType
                     'style' => 'margin-bottom:15px'
                 ]
             ])
-            ->add('professor', EntityType::class,[
-                'class' => 'App:Professor',
-                'label' => 'Professor:',
-                'choice_label' => function ($professor) {
-                    return $professor->getNome();
-                },
-                'attr' => [
-                    'class' => 'form-control',
-                    'style' => 'margin-bottom:15px'
-                ]
-            ])
             ->add('submit', SubmitType::class,[
                 'label' => 'Done',
                 'attr' => [

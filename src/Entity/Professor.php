@@ -10,6 +10,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Professor
 {
+
+    /**
+     * @ORM\OneToMany(targetEntity="User", mappedBy="professor", cascade={"persist","remove"})
+     */
+    private $user;
+
+    public function __constructUser()
+    {
+        $this->user = new ArrayCollection();
+    }
+
     /**
      * @var int
      *
@@ -30,7 +41,7 @@ class Professor
      */
     private $turmas;
 
-    public function __construct()
+    public function __constructTurma()
     {
         $this->turmas = new ArrayCollection();
     }
