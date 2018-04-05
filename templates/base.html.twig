@@ -20,12 +20,17 @@
         <div class="container-fluid color">
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav nav-pills">
-                    <li class="nav-item"><a class="outraFonte" href="#"> {{ app.user.name }}</a></li>
+                    <li class="nav-item">
+                        <a class="outraFonte">
+                            {{ app.user.name }}
+                        </a>
+                    </li>
                     <li class="fonte">|</li>
-                    {#{% if faculdade != null %}#}
-                        {#<li class="nav-item"><a class="outraFonte" href="#">{{ faculdade.nome }}</a>#}
-                        {#</li>#}
-                    {#{% endif %}#}
+                    <li class="nav-item">
+                        <a class="outraFonte" href="{{ path('faculdade_show', {'id': app.user.faculdade.id}) }}">
+                            {{ app.user.faculdade.nome }}
+                        </a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">

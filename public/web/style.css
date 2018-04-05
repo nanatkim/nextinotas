@@ -209,7 +209,11 @@ a {
 
 .outraFonte:hover{
     background-color: transparent !important;
-    color: lightskyblue;
+    color: white;
+}
+
+.outraFonte.clickable{
+    text-decoration: none !important;
 }
 
 .centroTeamWork {
