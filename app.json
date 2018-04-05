@@ -1,11 +1,10 @@
 {
   "name": "Heroku Sistema de Notas",
   "description": "Nexti - sistema de notas",
-  "repository": "https://github.com/nanatkim/sistemadenotas",
+  "repository": "https://github.com/nanatkim/nextinotas",
   "keywords": [
     "symfony4", "heroku", "nexti"
   ],
-  "success_url": "/heroku",
   "scripts": {
     "postdeploy": "php bin/console doctrine:schema:create"
   },
