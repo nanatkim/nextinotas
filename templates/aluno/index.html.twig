@@ -6,7 +6,7 @@
     <div class="container text">
         <div class="row">
             <div class="col-md-1">
-                <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id}) }}">Voltar</a>
+                <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
             </div>
             <div class="pull-right col-md-3">
                 <div class="search">
@@ -21,11 +21,13 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <span class="glyphicon glyphicon-list"></span>Lista de Alunos
-                        <div class="pull-right">
-                            <a href="{{ path('aluno_new', {'facul': faculdade.id}) }}"><img src="{{ asset('web/add.png') }}"
-                                                                                  height="20px" width="20px"></a>
-                            Adicionar Aluno
-                        </div>
+                        {% if is_granted('ROLE_ADM') %}
+                            <div class="pull-right">
+                                <a href="{{ path('aluno_new', {'facul': faculdade.id}) }}"><img src="{{ asset('web/add.png') }}"
+                                                                                      height="20px" width="20px"></a>
+                                Adicionar Aluno
+                            </div>
+                        {% endif %}
                     </div>
                     <div class="panel-body">
                         <ul class="list-group">
@@ -37,14 +39,16 @@
                                              aria-expanded="false" aria-controls="collapseExample{{ aluno.id }}">
                                             <label>{{ aluno.nome }}</label>
                                         </div>
-                                        <div class="col-md-1 pull-right action-buttons">
-                                            <a href="{{ path('aluno_edit', {'id': aluno.id, 'facul': faculdade.id}) }}">
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </a>
-                                            <a href="{{ path('aluno_delete', {'id': aluno.id, 'facul': faculdade.id}) }}" class="trash">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </a>
-                                        </div>
+                                        {% if is_granted('ROLE_ADM') %}
+                                            <div class="col-md-1 pull-right action-buttons">
+                                                <a href="{{ path('aluno_edit', {'id': aluno.id, 'facul': faculdade.id}) }}">
+                                                    <span class="glyphicon glyphicon-pencil"></span>
+                                                </a>
+                                                <a href="{{ path('aluno_delete', {'id': aluno.id, 'facul': faculdade.id}) }}" class="trash">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </a>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <div class="collapse" id="collapseExample{{ aluno.id }}">
                                         <div class="card card-block">

@@ -27,8 +27,9 @@
                               {% for av in avf %}
                                   <th>{{ av.idTipo.tipo }}</th>
                               {% endfor %}
+                              <th>Média</th>
                               <th>AVF</th>
-                              <th>MF</th>
+                              <th>Média Final</th>
                               <!-- endfor do av_tipo}}-->
                           </tr>
                           </thead>
@@ -39,22 +40,43 @@
                                   <td class="info-nome">{{ aluno.idAluno.nome }}</td>
                                   <td class="info-matricula">{{ aluno.idAluno.matricula }}</td>
                                   <!-- for notas_aluno}}-->
+                                  {% set v1 = 0 %}
+                                  {% set cont1 = 0 %}
                                   {% for av in avaluno %}
                                       {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPI" %}
                                           <td class="info-nota">{{ av.nota }}</td>
+                                          {%  set v1 = v1 + av.nota %}
+                                          {% set cont1 = cont1 + 1 %}
                                       {% endif %}
                                   {% endfor %}
+                                        {% set media1 = 0 %}
+                                        {% set media1 = v1/cont1 %}
+                                        <td>{{ media1 }}</td>
+                                  {% set v2 = 0 %}
+                                  {% set cont2 = 0 %}
                                   {% for av in avaluno %}
                                       {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPII" %}
                                           <td class="info-nota">{{ av.nota }}</td>
+                                          {% set v2 = v2 + av.nota %}
+                                          {% set cont2 = cont2 + 1 %}
                                       {% endif %}
                                   {% endfor %}
+                                      {% set media2 = 0 %}
+                                      {% set media2 = v2/cont2 %}
+                                      <td>{{ media2 }}</td>
+
+                                  {% set media = 0 %}
+                                  {% set media = (media1 + media2)/2 %}
+                                  <td>{{ media }}</td>
+                                  <!--end for notas aluno}}-->
+                                  {% set mediaFinal = 0 %}
                                   {% for av in avaluno %}
                                       {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVF" %}
                                           <td class="info-nota">{{ av.nota }}</td>
+                                          {% set mediaFinal = (media+av.nota)/2 %}
                                       {% endif %}
                                   {% endfor %}
-                                  <!--end for notas aluno}}-->
+                                  <td>{{ mediaFinal }}</td>
                               </tr>
                           {% endfor %}
                           <!-- end for atributos de aluno}}-->

@@ -13,15 +13,6 @@ class AuthController extends Controller
      */
     public function indexAction()
     {
-//        $faculdade = null;
         return $this->render('index.html.twig');
-    }
-
-    /**
-     * @Route("/admin")
-     */
-    public function admin()
-    {
-        return new Response('<html><body>Admin page!</body></html>');
     }
 }

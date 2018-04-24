@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Faculdade;
+use App\Entity\User;
 use App\Form\FaculdadeType;
 use App\Repository\FaculdadeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -52,16 +53,27 @@ class FaculdadeController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="faculdade_show", methods="GET")
+     * @Route("/{id}/{user}/", name="faculdade_show", methods="GET")
      */
-    public function show(Faculdade $faculdade): Response
+    public function show(Faculdade $faculdade, User $user): Response
     {
+        $professor = $this->getDoctrine()
+            ->getRepository('App:Professor')
+            ->findByFaculdade($faculdade);
+
+        foreach ($professor as $prof ){
+            if($prof->getEmail() == $user->getEmail()){
+                $p = $prof;
+                break;
+            }
+        }
+
         $aluno = $this->getDoctrine()
             ->getRepository('App:Aluno')
             ->findByFaculdade($faculdade->getId());
         $turma = $this->getDoctrine()
             ->getRepository('App:Turma')
-            ->findByFaculdade($faculdade->getId());
+            ->findBy(array('faculdade' => $faculdade->getId(), 'professor' => $p));
         $professor = $this->getDoctrine()
             ->getRepository('App:Professor')
             ->findByFaculdade($faculdade->getId());

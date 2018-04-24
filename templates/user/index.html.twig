@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container text">
-        <a class="btn btn-default" href="{{ path('faculdade_show',{'id': faculdade.id}) }}">Voltar</a>
+        <a class="btn btn-default" href="{{ path('faculdade_show',{'id': faculdade.id, 'user': app.user.id}) }}">Voltar</a>
         <hr>
         <div class="row">
             <div class="col-md-12">

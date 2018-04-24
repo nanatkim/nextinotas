@@ -3,7 +3,9 @@
 {% block title %}{{ faculdade.nome }}{% endblock %}
 
 {% block body %}
-    <a class="btn btn-default text" href="/">voltar</a>
+    {% if is_granted('ROLE_ADM') %}
+        <a class="btn btn-default text" href="/">voltar</a>
+    {% endif %}
     <hr>
     <div class="row text">
         <div class="box">
@@ -28,27 +30,28 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-sm-9">
-                <div class="circle-tile">
-                    <a href="{{ path('professor_index',{ 'facul': faculdade.id }) }}">
-                        <div class="circle-tile-heading dark-blue centroProfessor">
-                            <i class="fa fa-graduation-cap fa-fw fa-3x"></i>
-                        </div>
-                    </a>
-                    <a href="{{ path('professor_index',{ 'facul': faculdade.id }) }}">
-                        <div class="circle-tile-content dark-blue">
-                            <div class="circle-tile-number text-faded">
-                                Professor
+            {% if is_granted('ROLE_ADM') %}
+                <div class="col-lg-4 col-sm-9">
+                    <div class="circle-tile">
+                        <a href="{{ path('professor_index',{ 'facul': faculdade.id }) }}">
+                            <div class="circle-tile-heading dark-blue centroProfessor">
+                                <i class="fa fa-graduation-cap fa-fw fa-3x"></i>
                             </div>
-                            <div class="circle-tile-deion text-faded">
-                                {{ prof }} Professores
-                                <span id="sparklineA"></span>
+                        </a>
+                        <a href="{{ path('professor_index',{ 'facul': faculdade.id }) }}">
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-number text-faded">
+                                    Professor
+                                </div>
+                                <div class="circle-tile-deion text-faded">
+                                    {{ prof }} Professores
+                                    <span id="sparklineA"></span>
+                                </div>
                             </div>
-
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
 
             <div class="col-lg-4 col-sm-9">
                 <div class="circle-tile">
@@ -66,33 +69,33 @@
                                 {{ aluno }} Alunos
                                 <span id="sparklineA"></span>
                             </div>
-
                         </div>
                     </a>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-sm-9">
-                <div class="circle-tile">
-                    <a href="{{ path('disciplina_index',{ 'facul': faculdade.id }) }}">
-                        <div class="circle-tile-heading dark-blue centroDisciplina">
-                            <i class="fa fa-graduation-cap fa-fw fa-3x"></i>
-                        </div>
-                    </a>
-                    <a href="{{ path('disciplina_index',{ 'facul': faculdade.id }) }}">
-                        <div class="circle-tile-content dark-blue">
-                            <div class="circle-tile-number text-faded">
-                                Disciplina
+            {% if is_granted('ROLE_ADM') %}
+                <div class="col-lg-4 col-sm-9">
+                    <div class="circle-tile">
+                        <a href="{{ path('disciplina_index',{ 'facul': faculdade.id }) }}">
+                            <div class="circle-tile-heading dark-blue centroDisciplina">
+                                <i class="fa fa-graduation-cap fa-fw fa-3x"></i>
                             </div>
-                            <div class="circle-tile-deion text-faded">
-                                {{ disc }} Disciplinas
-                                <span id="sparklineA"></span>
+                        </a>
+                        <a href="{{ path('disciplina_index',{ 'facul': faculdade.id }) }}">
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-number text-faded">
+                                    Disciplina
+                                </div>
+                                <div class="circle-tile-deion text-faded">
+                                    {{ disc }} Disciplinas
+                                    <span id="sparklineA"></span>
+                                </div>
                             </div>
-
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
 
             <div class="col-lg-4 col-sm-9">
                 <div class="circle-tile">
@@ -116,27 +119,28 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-sm-9">
-                <div class="circle-tile">
-                    <a href="{{ path('user_index',{'facul':faculdade.id}) }}">
-                        <div class="circle-tile-heading dark-blue centroUsuario">
-                            <i class="fa fa-graduation-cap fa-fw fa-3x"></i>
-                        </div>
-                    </a>
-                    <a href="{{ path('user_index',{'facul':faculdade.id}) }}">
-                        <div class="circle-tile-content dark-blue">
-                            <div class="circle-tile-number text-faded">
-                                Usuário
+            {% if is_granted('ROLE_ADM') %}
+                <div class="col-lg-4 col-sm-9">
+                    <div class="circle-tile">
+                        <a href="{{ path('user_index',{'facul':faculdade.id}) }}">
+                            <div class="circle-tile-heading dark-blue centroUsuario">
+                                <i class="fa fa-graduation-cap fa-fw fa-3x"></i>
                             </div>
-                            <div class="circle-tile-deion text-faded">
-                                {{ user }} Usuários
-                                <span id="sparklineA"></span>
+                        </a>
+                        <a href="{{ path('user_index',{'facul':faculdade.id}) }}">
+                            <div class="circle-tile-content dark-blue">
+                                <div class="circle-tile-number text-faded">
+                                    Usuário
+                                </div>
+                                <div class="circle-tile-deion text-faded">
+                                    {{ user }} Usuários
+                                    <span id="sparklineA"></span>
+                                </div>
                             </div>
-
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -27,7 +27,7 @@
                     </li>
                     <li class="fonte">|</li>
                     <li class="nav-item">
-                        <a class="outraFonte" href="{{ path('faculdade_show', {'id': app.user.faculdade.id}) }}">
+                        <a class="outraFonte" href="{{ path('faculdade_show', {'id': app.user.faculdade.id, 'user': app.user.id}) }}">
                             {{ app.user.faculdade.nome }}
                         </a>
                     </li>

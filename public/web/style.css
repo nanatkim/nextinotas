@@ -202,19 +202,9 @@ a {
     padding-left: 7px;
 }
 
-.outraFonte{
-    color:white;
-    font-family: Ubuntu;
-}
-
-.outraFonte:hover{
-    background-color: transparent !important;
-    color: white;
-}
-
-.outraFonte.clickable{
-    text-decoration: none !important;
-}
+.outraFonte{color:white;font-family: Ubuntu;}
+.outraFonte:hover{background-color: transparent !important;color: white;}
+.outraFonte.clickable{text-decoration: none !important;}
 
 .centroTeamWork {
     background: url("teamwork.png") no-repeat center;
