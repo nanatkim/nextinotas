@@ -4,14 +4,14 @@
 <div class="container" id="body">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey|trans(error.messageData) }}
+                </div>
+            {% endif %}
             <div class="circle-tile-heading2 dark-blue centroLogin">
             </div>
             <form class="form-horizontal" role="form" method="POST" action="{{ path('security_login_check') }}">
-                {% if error %}
-                    <div class="alert alert-danger">
-                        {{ error.messageKey|trans(error.messageData) }}
-                    </div>
-                {% endif %}
                 <div class="boxlogin">
                     <h4 class="textWhite">Sistema de Notas</h4>
                     <input type="text" id="login" name="_username" class="form-control" placeholder="Login"
