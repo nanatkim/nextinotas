@@ -8,11 +8,13 @@
             <div class="col-md-1">
                 <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
             </div>
-            <div class="pull-right col-md-3">
-                <div class="search">
-                    <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
-                    <button type="submit" class="btn1 btn-primary btn-sm">Pesquisar</button>
-                </div>
+            <div class="pull-right">
+                {#<div class="search">#}
+                    {#<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />#}
+                    {#<button type="submit" class="btn1 btn-primary btn-sm">Pesquisar</button>#}
+                {#</div>#}
+                <label for="filtrar-tabela"></label>
+                <input class="form-control" type ="text" name="filtro" id="filtrar-tabela" placeholder="nome do aluno">
             </div>
         </div>
         <hr>
@@ -30,14 +32,14 @@
                         {% endif %}
                     </div>
                     <div class="panel-body">
-                        <ul class="list-group">
+                        <ul class="list-group" id="tabela-alunos">
                             {% for aluno in alunos %}
-                                <li class="list-group-item">
+                                <li class="list-group-item aluno" id="primeiro">
                                     <div class="row">
                                         <div class="col-md-10" data-toggle="collapse"
                                              href="#collapseExample{{ aluno.id }}"
                                              aria-expanded="false" aria-controls="collapseExample{{ aluno.id }}">
-                                            <label>{{ aluno.nome }}</label>
+                                            <label class="info-nome">{{ aluno.nome }}</label>
                                         </div>
                                         {% if is_granted('ROLE_ADM') %}
                                             <div class="col-md-1 pull-right action-buttons">
@@ -80,4 +82,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('web/js.js') }}"></script>
 {% endblock %}

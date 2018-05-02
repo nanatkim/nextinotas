@@ -8,7 +8,7 @@
     <div class="row text">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
-                <div class="panel-heading">AvAluno - {{ aluno.idAluno.nome }}</div>
+                <div class="panel-heading">{{ aluno.idAluno.idAluno.nome }}  <div class="pull-right">| Nota máxima: {{ avbase.notaMax }}</div></div>
                 <div class="panel-body">
                     {{ form_start(form) }}
                     {{ form_widget(form) }}

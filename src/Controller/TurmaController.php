@@ -44,6 +44,7 @@ class TurmaController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $turma->setFaculdade($facul);
+            $turma->setProfessor($prof);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($turma);

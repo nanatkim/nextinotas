@@ -1,95 +1,78 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-  <main>
-      <a class="btn btn-default" href="{{ path('turma_show', {'id': turma.id, 'facul':faculdade.id}) }}">Voltar</a>
-      <hr>
-      <section class="container">
-          <div class="panel-heading">
-              <h2>Notas</h2>
-              <label for="filtrar-tabela">Procurar</label>
-              <input class="form-control" type ="text" name="filtro" id="filtrar-tabela" placeholder="nome do aluno">
-              <div class="row">
-                  <div class="panel panel-default">
-                      <table class="table table-responsive">
-                          <thead><!-- for atributos de aluno}}-->
-                          <tr>
-                              <th>Nome</th>
-                              <th>Matricula</th>
-                              <!-- for do av_tipo}}-->
-                              {% for av in avp1 %}
-                                  <th>{{ av.idTipo.tipo }}</th>
-                              {% endfor %}
-                              <th>AVPI</th>
-                              {% for av in avp2 %}
-                                  <th>{{ av.idTipo.tipo }}</th>
-                              {% endfor %}
-                              <th>AVPII</th>
-                              {% for av in avf %}
-                                  <th>{{ av.idTipo.tipo }}</th>
-                              {% endfor %}
-                              <th>Média</th>
-                              <th>AVF</th>
-                              <th>Média Final</th>
-                              <!-- endfor do av_tipo}}-->
-                          </tr>
-                          </thead>
-                          <!-- for atributos de aluno}}-->
-                          <tbody id="tabela-alunos">
-                          {% for aluno in turmaluno %}
-                              <tr class="aluno" id = "primeiro">
-                                  <td class="info-nome">{{ aluno.idAluno.nome }}</td>
-                                  <td class="info-matricula">{{ aluno.idAluno.matricula }}</td>
-                                  <!-- for notas_aluno}}-->
-                                  {% set v1 = 0 %}
-                                  {% set cont1 = 0 %}
-                                  {% for av in avaluno %}
-                                      {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPI" %}
-                                          <td class="info-nota">{{ av.nota }}</td>
-                                          {%  set v1 = v1 + av.nota %}
-                                          {% set cont1 = cont1 + 1 %}
-                                      {% endif %}
-                                  {% endfor %}
-                                        {% set media1 = 0 %}
-                                        {% set media1 = v1/cont1 %}
-                                        <td>{{ media1 }}</td>
-                                  {% set v2 = 0 %}
-                                  {% set cont2 = 0 %}
-                                  {% for av in avaluno %}
-                                      {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPII" %}
-                                          <td class="info-nota">{{ av.nota }}</td>
-                                          {% set v2 = v2 + av.nota %}
-                                          {% set cont2 = cont2 + 1 %}
-                                      {% endif %}
-                                  {% endfor %}
-                                      {% set media2 = 0 %}
-                                      {% set media2 = v2/cont2 %}
-                                      <td>{{ media2 }}</td>
-
-                                  {% set media = 0 %}
-                                  {% set media = (media1 + media2)/2 %}
-                                  <td>{{ media }}</td>
-                                  <!--end for notas aluno}}-->
-                                  {% set mediaFinal = 0 %}
-                                  {% for av in avaluno %}
-                                      {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVF" %}
-                                          <td class="info-nota">{{ av.nota }}</td>
-                                          {% set mediaFinal = (media+av.nota)/2 %}
-                                      {% endif %}
-                                  {% endfor %}
-                                  <td>{{ mediaFinal }}</td>
-                              </tr>
-                          {% endfor %}
-                          <!-- end for atributos de aluno}}-->
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
-      </section>
-  </main>
-
+    <main>
+        <a class="btn btn-default" href="{{ path('turma_show', {'id': turma.id, 'facul':faculdade.id}) }}">Voltar</a>
+        <hr>
+        <section class="container">
+            <div class="panel-heading">
+                <h2>Notas</h2>
+                <label for="filtrar-tabela">Procurar</label>
+                <input class="form-control" type ="text" name="filtro" id="filtrar-tabela" placeholder="nome do aluno">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <table class="table table-responsive">
+                            <thead><!-- for atributos de aluno}}-->
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Matricula</th>
+                                    <!-- for do av_tipo}}-->
+                                    {% for av in avp1 %}
+                                    <th>{{ av.idTipo.tipo }}</th>
+                                    {% endfor %}
+                                    <th>AVPI</th>
+                                    {% for av in avp2 %}
+                                        <th>{{ av.idTipo.tipo }}</th>
+                                    {% endfor %}
+                                    <th>AVPII</th>
+                                    {% for av in avf %}
+                                        <th>{{ av.idTipo.tipo }}</th>
+                                    {% endfor %}
+                                    <th>Média</th>
+                                    <th>AVF</th>
+                                    <th>Média Final</th>
+                                    <!-- endfor do av_tipo}}-->
+                                </tr>
+                            </thead>
+                            <!-- for atributos de aluno}}-->
+                            <tbody id="tabela-alunos">
+                            {% for aluno in turmaluno %}
+                                <tr class="aluno" id="primeiro">
+                                    <td class="info-nome">{{ aluno.idAluno.nome }}</td>
+                                    <td class="info-matricula">{{ aluno.idAluno.matricula }}</td>
+                                    <!-- for notas_aluno}}-->
+                                    {% for av in avaluno %}
+                                        {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPI" %}
+                                            <td class="info-av1">{{ av.nota }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <td class="mediaIndividual1">0</td>
+                                    {% for av in avaluno %}
+                                        {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPII" %}
+                                            <td class="info-av2">{{ av.nota }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <td class="mediaIndividual2">0</td>
+                                    <td class="info-mediaAv">0</td>
+                                    <!--end for notas aluno}}-->
+                                    {% for av in avaluno %}
+                                        {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVF" %}
+                                            <td class="info-avf">{{ av.nota }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <td class="mediafinal">0</td>
+                                </tr>
+                            {% endfor %}
+                            <!-- end for atributos de aluno}}-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}
 
 {% block javascripts %}
-<script src="{{ asset('web/js.js') }}"></script>
+    <script src="{{ asset('web/js.js') }}"></script>
+    <script src="{{ asset('web/media.js') }}"></script>
 {% endblock %}

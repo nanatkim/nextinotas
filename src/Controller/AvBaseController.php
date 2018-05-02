@@ -87,15 +87,15 @@ class AvBaseController extends Controller
             ->getRepository('App:TurmAluno')
             ->findByIdTurma($tur);
 
-        $avaliacao = $this->getDoctrine()
+        $avaluno = $this->getDoctrine()
             ->getRepository('App:AvAluno')
             ->findByIdAvbase($avBase);
 
         return $this->render('avbase/show.html.twig', [
             'avbase' => $avBase,
-            'avaliacao' =>$avaliacao,
+            'avaluno' =>$avaluno,
             'faculdade' => $facul,
-            'relacoes' => $turmaluno,
+            'turmaluno' => $turmaluno,
             'turma' => $tur
         ]);
     }

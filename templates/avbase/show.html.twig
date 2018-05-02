@@ -8,7 +8,7 @@
         <hr>
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Notas?</div>
+                <div class="panel-heading">AvBase <div class="pull-right">| Nota máxima: {{ avbase.notaMax }}</div></div>
                 <table class="table">
                     <thead>
                     <tr>
@@ -17,15 +17,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for rel in relacoes %}
+                    {% for aluno in turmaluno %}
                         <tr>
-                            <th scope="row">{{ rel.idAluno.nome }}</th>
+                            <th scope="row">{{ aluno.idAluno.nome }}</th>
                             {#<td>{{ rel.idTurma.disciplina.nome }}</td>#}
-                            {% for av in avaliacao %}
-                                {% if rel.idAluno.id == av.idAluno.idAluno.id and av.idAvbase.id == avbase.id %}
+                            {% for av in avaluno %}
+                                {% if aluno.idAluno.id == av.idAluno.idAluno.id and av.idAvbase.id == avbase.id %}
                                     <td>{{ av.nota }}</td>
                                     <td>
-                                        <a href="{{ path('avaluno_edit',{'facul':turma.faculdade.id,'turma':turma.id,'avbase':avbase.id,'aluno':av.id}) }}" class="btn btn-default">Nota</a>
+                                        <a href="{{ path('avaluno_edit',{'facul':turma.faculdade.id,'avbase':avbase.id,'turma':turma.id,'id':av.id}) }}" class="btn btn-default">Nota</a>
                                     </td>
                                 {% endif %}
                             {% endfor %}

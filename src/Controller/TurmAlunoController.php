@@ -53,6 +53,13 @@ class TurmAlunoController extends Controller
                 ->getRepository('App:Aluno')
                 ->findOneByMatricula($mat);
 
+            if($aluno == null){
+                $this->addFlash(
+                    'error',
+                    'Não existe aluno com essa matrícula.'
+                );
+                return $this->redirectToRoute('turmaluno_new',array('facul'=>$facul, 'tur'=>$tur));
+            }
             $turmAluno->setIdTurma($turma);
             $turmAluno->setIdAluno($aluno);
 

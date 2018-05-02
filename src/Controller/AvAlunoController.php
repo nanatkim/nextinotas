@@ -47,7 +47,7 @@ class AvAlunoController extends Controller
     {
         $aluno = $this->getDoctrine()
             ->getRepository('App:TurmAluno')
-            ->findAll();
+            ->findByIdTurma($turma);
 
         $turma = $this->getDoctrine()
             ->getRepository('App:Turma')
@@ -68,20 +68,16 @@ class AvAlunoController extends Controller
     }
 
     /**
-     * @Route("/{avbase}/{aluno}/{facul}/{turma}/edit", name="avaluno_edit", methods="GET|POST")
+     * @Route("/{avbase}/{facul}/{turma}/{id}/edit", name="avaluno_edit", methods="GET|POST")
      */
-    public function edit(Request $request,AvBase $avbase,AvAluno $aluno,Faculdade $facul, int $turma): Response
+    public function edit(Request $request,AvBase $avbase,Faculdade $facul, Turma $turma, AvAluno $id): Response
     {
-        $form = $this->createForm(AvAlunoType::class, $aluno);
+        $avaluno = $this->getDoctrine()
+            ->getRepository('App:AvAluno')
+            ->find($id);
+
+        $form = $this->createForm(AvAlunoType::class, $avaluno);
         $form->handleRequest($request);
-
-        $aluno = $this->getDoctrine()
-            ->getRepository('App:TurmAluno')
-            ->find($aluno);
-
-        $turma = $this->getDoctrine()
-            ->getRepository('App:Turma')
-            ->find($turma);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -91,7 +87,7 @@ class AvAlunoController extends Controller
         }
 
         return $this->render('avaluno/form.html.twig', [
-            'aluno'=>$aluno,
+            'aluno'=>$avaluno,
             'faculdade'=>$facul,
             'turma'=>$turma,
             'avbase'=>$avbase,
