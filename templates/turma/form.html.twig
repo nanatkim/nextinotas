@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Turma{% endblock %}
+
+{% block body %}
+    <a class="btn btn-default text" href="{{ path('turma_index',{'facul':faculdade.id, 'prof': app.user.professor.id}) }}">Voltar</a>
+    <hr>
+    <div class="row text">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Turma</div>
+                <div class="panel-body">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

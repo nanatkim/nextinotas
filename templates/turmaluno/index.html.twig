@@ -1,0 +1,52 @@
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list"></span>Alunos
+
+<div class="pull-right">
+                    <a href="{{ path('turmaluno_new', {'tur': tur, 'facul':faculdade.id}) }}"><img src="{{ asset('web/add.png') }}" height="20px" width="20px"></a>     Adicionar Aluno</div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {% for rel in turmalunos %}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-md-10" data-toggle="collapse"
+                                     href="#collapseExample{{ rel.id }}"
+                                     aria-expanded="false" aria-controls="collapseExample{{ rel.id }}">
+                                    <label>{{ rel.idAluno.nome }}</label>
+                                </div>
+                                <div class="col-md-1 pull-right action-buttons">
+                                    <a href="{{ path('turmaluno_delete', {'tur':tur, 'id': rel.id, 'facul':faculdade.id}) }}" class="trash">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="collapse" id="collapseExample{{ rel.id }}">
+                                <div class="card card-block">
+                                    <ul>
+                                        <li>Nome: {{ rel.idAluno.nome }}</li>
+                                        <li>Matricula: {{ rel.idAluno.matricula }}</li>
+                                        <li>Semestre: {{ rel.idAluno.semestre }}</li>
+                                        <li>Faculdade: {{ rel.idAluno.faculdade.nome }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    {% else %}
+                        <tr>
+                            <td colspan="2">Ainda não há nenhum aluno cadastrado nessa turma.</td>
+                        </tr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>
+
+                            Total de Alunos <span class="label label-info">{{ qtd }}</span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>

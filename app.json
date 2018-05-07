@@ -1,0 +1,19 @@
+{
+  "name": "Heroku Sistema de Notas",
+  "description": "Nexti - sistema de notas",
+  "repository": "https://github.com/nanatkim/nextinotas",
+  "keywords": [
+    "symfony4", "heroku", "nexti"
+  ],
+  "scripts": {
+    "postdeploy": "php bin/console doctrine:schema:create"
+  },
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "env": {
+    "SYMFONY_ENV": {
+      "value": "prod"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professor{% endblock %}
+
+{% block body %}
+    <div class="container text">
+        <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
+        <hr>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list"></span>Lista de Professores
+                <div class="pull-right">
+                    <a href="{{ path('professor_new',{'facul':faculdade.id}) }}"><img src="{{ asset('web/add.png') }}" height="20px" width="20px"></a>     Adicionar Professor</div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {% for prof in professors %}
+                        <li class="list-group-item">
+                            <label>
+                                {{ prof.nome }}
+                            </label>
+                            <div class="pull-right action-buttons">
+                                <a href="{{ path('professor_edit',{'id':prof.id,'facul':faculdade.id}) }}">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                                <a href="{{ path('professor_delete',{'id':prof.id,'facul':faculdade.id}) }}" class="trash">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            </div>
+                        </li>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">Ainda não existem professores cadastrados.</td>
+                        </tr>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>
+                            Total de Professores <span class="label label-info">{{ qtd }}</span></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

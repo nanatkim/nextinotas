@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AvBase{% endblock %}
+
+{% block body %}
+    <div class="container text">
+        <a class="btn btn-default" href="{{ path('avbase_index', {'facul': turma.faculdade.id,'tur':turma.id}) }}">Voltar</a>
+        <hr>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">AvBase <div class="pull-right">| Nota máxima: {{ avbase.notaMax }}</div></div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Aluno</th>
+                        <th>{{ avbase.idTipo.tipo }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for aluno in turmaluno %}
+                        <tr>
+                            <th scope="row">{{ aluno.idAluno.nome }}</th>
+                            {#<td>{{ rel.idTurma.disciplina.nome }}</td>#}
+                            {% for av in avaluno %}
+                                {% if aluno.idAluno.id == av.idAluno.idAluno.id and av.idAvbase.id == avbase.id %}
+                                    <td>{{ av.nota }}</td>
+                                    <td>
+                                        <a href="{{ path('avaluno_edit',{'facul':turma.faculdade.id,'avbase':avbase.id,'turma':turma.id,'id':av.id}) }}" class="btn btn-default">Nota</a>
+                                    </td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

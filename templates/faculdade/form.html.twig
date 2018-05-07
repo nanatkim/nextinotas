@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Faculdade{% endblock %}
+
+{% block body %}
+
+<a class="btn btn-default text" href="/">Voltar</a>
+<hr>
+<div class="row text">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Faculdade</div>
+            <div class="panel-body">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

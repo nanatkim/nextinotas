@@ -1,0 +1,384 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	/* Margin bottom by footer height */
+	margin-bottom: 60px;
+}
+
+#tam {
+    min-height: 437px;
+}
+/* ---------------------------------------------------------*/
+
+/* Footer */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+    padding-top: 10px;
+}
+
+.texto{
+    color:black;
+    font-weight: bold;
+    padding-top: -20px;
+    padding-left: 85px;
+    font-family: Ubuntu;
+    font-size:13px;
+    margin-bottom: -60px;
+    
+}
+/* ---------------------------------------------------------*/
+
+/* view - listinha */
+.trash { color:rgb(209, 91, 71); }
+.panel .glyphicon,.list-group-item .glyphicon { margin-right:5px; }
+.list-group-item:hover, a.list-group-item:focus {text-decoration: none;background-color: rgb(245, 245, 245);}
+.list-group { margin-bottom:0px; }
+
+.centralizatexto {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 150%;
+	text-align: center;
+}
+
+/* ---------------------------------------------------------*/
+
+/* Form Login */
+.circle-tile-heading2 {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto -70px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 100%;
+    color: #fff;
+    transition: all ease-in-out .2s;
+}
+
+.boxlogin{
+    padding-top: 37px;
+}
+
+.centroLogin {
+    background: url("appicon.png") no-repeat center;
+    background-size:150px 150px;
+}
+
+#body {
+	padding-top: 50px;
+	padding-bottom: 40px;
+    padding-right: 40px;
+	position: relative;
+    background-color:#fff;
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px Ubuntu;
+}
+
+.form-horizontal {
+	background-color: #0088CC;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	padding-left: 150px;
+	padding-right: 150px;
+	border-radius: 15px;
+	border-color:#337ab7;
+	border-width: 5px;
+	box-shadow:0 1px 0 #cfcfcf;
+}
+
+.textWhite{
+    color: rgb(245, 245, 245);
+    font-family: Ubuntu;
+}
+
+.text{
+    font-family: Ubuntu;
+}
+
+h4 {
+    border:0 solid #fff;
+    padding-top:10px;
+	text-align: center;
+}
+
+.form-control {
+	border-radius: 50px;
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.logo{
+	width: 60px;
+}
+
+#sistema {
+	width: 100%;
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    border: none;
+    
+}
+/* ---------------------------------------------------------*/
+
+/* Quadro inicial */
+@media (min-width: 768px){
+    .circle-tile {
+        margin-bottom: 30px;
+    }
+}
+
+.circle-tile {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.circle-tile-heading {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto -40px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 100%;
+    color: #fff;
+    transition: all ease-in-out .3s;
+}
+
+/* -- Background Helper Classes */
+/* Use these to cuztomize the background color of a div. These are used along with tiles, or any other div you want to customize. */
+ .dark-blue {
+     background-color: #337ab7;
+ }
+
+/* -- Text Color Helper Classes */
+.text-faded {
+    color:white;
+}
+
+a {
+ text-decoration: none !important;
+}
+
+.circle-tile-content {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    border-radius: 5px;
+    border-color:#337ab7;
+    border-width: 5px;
+}
+
+.circle-tile-number {
+    padding: 5px 0 15px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.tile {
+    margin-bottom: 15px;
+    padding: 15px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.color{
+  	background-color: #337ab7;
+}
+
+.fonte{
+ 	color:white;
+    font-family: Ubuntu;
+  	padding-top: 15px;
+    padding-left: 7px;
+}
+
+.outraFonte{color:white;font-family: Ubuntu;}
+.outraFonte:hover{background-color: transparent !important;color: white;}
+.outraFonte.clickable{text-decoration: none !important;}
+
+.centroTeamWork {
+    background: url("teamwork.png") no-repeat center;
+    background-size:75px 75px;
+}
+
+.centroAluno {
+    background: url("reading.png") no-repeat center;
+    background-size:74px 74px;
+}
+
+.centroProfessor {
+    background: url("teacher.png") no-repeat center;
+    background-size:75px 75px;
+}
+
+.centroDisciplina {
+    background: url("library.png") no-repeat center;
+    background-size:74px 74px;
+}
+
+.centroTipoAv {
+    background: url("grade.png") no-repeat center;
+    background-size:74px 74px;
+}
+
+.centroUsuario {
+    background: url("team.png") no-repeat center;
+    background-size:74px 74px;
+}
+
+.box3{
+    margin-right: 400px;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 30px;
+    padding-left: 0;
+}
+/* ---------------------------------------------------------*/
+
+/* Details dropdown */
+.center{
+    text-align: center;
+}
+
+ul{
+    list-style-type:none;
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.clickable .glyphicon
+{
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px
+}
+
+.panel-heading span
+{
+    margin-top: -23px;
+    font-size: 15px;
+    margin-right: -9px;
+}
+a.clickable { color: inherit; }
+a.clickable:hover { text-decoration:none; }
+
+.trash { color:rgb(209, 91, 71); }
+.flag { color:rgb(248, 148, 6); }
+.panel-body { padding:0px;}
+.panel-footer .pagination { margin: 0; }
+.panel .glyphicon,.list-group-item .glyphicon { margin-right:5px; }
+.panel-body .radio, .checkbox { display:inline-block;margin:0px; }
+.panel-body input[type=checkbox]:checked + label { text-decoration: line-through;color: rgb(128, 144, 160); }
+.list-group-item:hover, a.list-group-item:focus {text-decoration: none;background-color: rgb(245, 245, 245);}
+.list-group { margin-bottom:0px; }
+.centralizatexto {
+    margin-top: 10px;
+    margin-bottom: 80px;
+    font-size: 150%;
+    text-align: center;
+}
+/* ---------------------------------------------------------*/
+
+/* search function */
+#search {
+    float: right;
+    margin-top: 9px;
+    width: 250px;
+}
+
+.search {
+    padding: 5px 0;
+    width: 230px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    float: left;
+    line-height: 22px;
+}
+
+    .search input {
+        position: absolute;
+        width: 0px;
+        float: Left;
+        margin-left: 210px;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        height: 30px;
+        line-height: 18px;
+        padding: 0 2px 0 2px;
+        border-radius:1px;
+    }
+
+        .search:hover input, .search input:focus {
+            width: 200px;
+            margin-left: 0px;
+        }
+
+.btn1 {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-radius:1px;
+}
+/* ---------------------------------------------------------*/
+
+/* turma details*/
+
+.turde{
+
+    text-align: right;
+    font-size: 75%;
+    margin-top: 10px;
+}
+.box1{
+	margin-left: 0px;
+	margin-top: 65px;
+    margin-bottom: 100px;
+    margin-right: 10px;
+}
+
+.box4{
+    margin-left: 80px;
+    margin-top: 40px;
+    margin-right: 10px;
+}
+
+.centroTurmaAluno {
+    background: url("aval.png") no-repeat center;
+    background-size:74px 74px;
+}
+
+.centroNotas {
+    background: url("media.png") no-repeat center;
+    background-size:74px 74px;
+}
+
+#filtrar-tabela{
+	width: 200px;
+	height: 35px;
+	margin-bottom: 15px;
+}
+
+.invisible{
+	display: none;
+}
