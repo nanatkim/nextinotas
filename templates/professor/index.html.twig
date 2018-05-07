@@ -4,7 +4,14 @@
 
 {% block body %}
     <div class="container text">
-        <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
+        <div class="row">
+            <div class="col-md-1">
+                <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
+            </div>
+            <div class="pull-right">
+                <input class="form-control" id="myInputList" type="text" placeholder="pesquisar...">
+            </div>
+        </div>
         <hr>
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -13,7 +20,7 @@
                     <a href="{{ path('professor_new',{'facul':faculdade.id}) }}"><img src="{{ asset('web/add.png') }}" height="20px" width="20px"></a>     Adicionar Professor</div>
             </div>
             <div class="panel-body">
-                <ul class="list-group">
+                <ul class="list-group" id="myList">
                     {% for prof in professors %}
                         <li class="list-group-item">
                             <label>
@@ -45,4 +52,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/pesquisa.js') }}"></script>
 {% endblock %}

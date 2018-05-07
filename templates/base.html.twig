@@ -8,7 +8,6 @@
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('web/appicon.png') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap.css') }}">
-    <!link rel="stylesheet" type="text/css" href="{{ asset('bootstrap/css/bootstrap-theme.css') }}">
     <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
     <!link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
@@ -45,10 +44,10 @@
     </nav>
 {% endif %}
 <div class="container" id="tam">
-    <div class="row">
-
-        {% block body %}{% endblock %}
-
+    <div class="col-sm-12">
+        <div class="row">
+            {% block body %}{% endblock %}
+        </div>
     </div>
 </div>
 {% block javascripts %}

@@ -4,20 +4,27 @@
 
 {% block body %}
     <div class="container text">
-        <a class="btn btn-default" href="{{ path('faculdade_show',{'id': faculdade.id, 'user': app.user.id}) }}">Voltar</a>
+        <div class="row">
+            <div class="col-md-1 col-sm-1">
+                <a class="btn btn-default" href="{{ path('faculdade_show',{'id': faculdade.id, 'user': app.user.id}) }}">Voltar</a>
+            </div>
+            <div class="pull-right">
+                <input class="form-control" id="myInputList" type="text" placeholder="pesquisar...">
+            </div>
+        </div>
         <hr>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-sm-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <span class="glyphicon glyphicon-list"></span>Lista de Usuário
                     </div>
                     <div class="panel-body">
-                        <ul class="list-group">
+                        <ul class="list-group" id="myList">
                             {% for us in users %}
                                 <li class="list-group-item">
                                     <div class="row">
-                                        <div class="col-md-10" data-toggle="collapse"
+                                        <div class="col-md-10 col-sm-10" data-toggle="collapse"
                                              href="#collapseExample{{ us.id }}"
                                              aria-expanded="false" aria-controls="collapseExample{{ us.id }}">
                                             <label>{{ us.name }}</label>
@@ -37,7 +44,7 @@
                     </div>
                     <div class="panel-footer">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6">
                                 <h6>
                                     Total de Usuário <span class="label label-info">{{ qtd }}</span></h6>
                             </div>
@@ -47,4 +54,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/pesquisa.js') }}"></script>
 {% endblock %}

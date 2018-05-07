@@ -9,12 +9,7 @@
                 <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
             </div>
             <div class="pull-right">
-                {#<div class="search">#}
-                    {#<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />#}
-                    {#<button type="submit" class="btn1 btn-primary btn-sm">Pesquisar</button>#}
-                {#</div>#}
-                <label for="filtrar-tabela"></label>
-                <input class="form-control" type ="text" name="filtro" id="filtrar-tabela" placeholder="nome do aluno">
+                <input class="form-control" id="myInputList" type="text" placeholder="nome, matrícula...">
             </div>
         </div>
         <hr>
@@ -32,9 +27,9 @@
                         {% endif %}
                     </div>
                     <div class="panel-body">
-                        <ul class="list-group" id="tabela-alunos">
+                        <ul class="list-group" id="myList">
                             {% for aluno in alunos %}
-                                <li class="list-group-item aluno" id="primeiro">
+                                <li class="list-group-item">
                                     <div class="row">
                                         <div class="col-md-10" data-toggle="collapse"
                                              href="#collapseExample{{ aluno.id }}"
@@ -84,5 +79,5 @@
     </div>
 {% endblock %}
 {% block javascripts %}
-    <script src="{{ asset('web/js.js') }}"></script>
+    <script src="{{ asset('js/pesquisa.js') }}"></script>
 {% endblock %}

@@ -1,27 +1,33 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <main>
-        <a class="btn btn-default" href="{{ path('turma_show', {'id': turma.id, 'facul':faculdade.id}) }}">Voltar</a>
+        <div class="row">
+            <div class="col-md-1">
+                <a class="btn btn-default" href="{{ path('turma_show', {'id': turma.id, 'facul':faculdade.id}) }}">Voltar</a>
+            </div>
+            <div class="pull-right">
+                <input class="form-control" type ="text" name="filtro" id="filtrar-tabela" placeholder="nome, matrícula...">
+            </div>
+        </div>
         <hr>
         <section class="container">
             <div class="panel-heading">
-                <h2>Notas</h2>
-                <label for="filtrar-tabela">Procurar</label>
-                <input class="form-control" type ="text" name="filtro" id="filtrar-tabela" placeholder="nome do aluno">
                 <div class="row">
                     <div class="panel panel-default">
                         <table class="table table-responsive">
                             <thead><!-- for atributos de aluno}}-->
-                                <tr>
+                                <tr class = "Avaluno">
                                     <th>Nome</th>
                                     <th>Matricula</th>
                                     <!-- for do av_tipo}}-->
                                     {% for av in avp1 %}
-                                    <th>{{ av.idTipo.tipo }}</th>
+                                    <th class="tipoAv">{{ av.idTipo.tipo }}</th>
+                                    <th class="pesoav1" style="display:none">{{ av.notaMax }}</th>
                                     {% endfor %}
                                     <th>AVPI</th>
                                     {% for av in avp2 %}
-                                        <th>{{ av.idTipo.tipo }}</th>
+                                        <th class="tipoAv">{{ av.idTipo.tipo }}</th>
+                                        <th class="pesoav2" style="display:none">{{ av.notaMax }}</th>
                                     {% endfor %}
                                     <th>AVPII</th>
                                     {% for av in avf %}
@@ -41,8 +47,11 @@
                                     <td class="info-matricula">{{ aluno.idAluno.matricula }}</td>
                                     <!-- for notas_aluno}}-->
                                     {% for av in avaluno %}
-                                        {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPI" %}
-                                            <td class="info-av1">{{ av.nota }}</td>
+                                    {% set idAlu =0 %}
+                                    {% set idAlu = aluno.id %}
+                                    
+                                    {% if av.idAluno.idAluno.id == aluno.idAluno.id and av.idAvbase.descricao == "AVPI" %}
+                                            <td class="info-av1 ">{{ av.nota }}</td>
                                         {% endif %}
                                     {% endfor %}
                                     <td class="mediaIndividual1">0</td>
@@ -73,6 +82,6 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('web/js.js') }}"></script>
-    <script src="{{ asset('web/media.js') }}"></script>
+    <script src="{{ asset('js/js.js') }}"></script>
+    <script src="{{ asset('js/media.js') }}"></script>
 {% endblock %}

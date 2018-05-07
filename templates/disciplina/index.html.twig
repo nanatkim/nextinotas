@@ -4,7 +4,14 @@
 
 {% block body %}
     <div class="container text">
-        <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
+        <div class="row">
+            <div class="col-md-1 col-sm-1">
+                <a class="btn btn-default" href="{{ path('faculdade_show', {'id':faculdade.id, 'user': app.user.id}) }}">Voltar</a>
+            </div>
+            <div class="pull-right">
+                <input class="form-control" id="myInputList" type="text" placeholder="pesquisar...">
+            </div>
+        </div>
         <hr>
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -13,7 +20,7 @@
                     <a href="{{ path('disciplina_new', {'facul':faculdade.id}) }}"><img src="{{ asset('web/add.png') }}" height="20px" width="20px"></a>     Adicionar Disciplina</div>
             </div>
             <div class="panel-body">
-                <ul class="list-group">
+                <ul class="list-group" id="myList">
                     {% for disciplina in disciplinas %}
                         <li class="list-group-item">
                             <label>
@@ -34,7 +41,7 @@
             </div>
             <div class="panel-footer">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-6">
                         <h6>
                             Total de Disciplinas <span class="label label-info">{{ qtd }}</span></h6>
                     </div>
@@ -42,4 +49,7 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/pesquisa.js') }}"></script>
 {% endblock %}

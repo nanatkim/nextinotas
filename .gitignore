@@ -9,6 +9,11 @@
 ###> symfony/webpack-encore-pack ###
 /node_modules/
 /public/build/
+<<<<<<< HEAD
+=======
+npm-debug.log
+yarn-error.log
+>>>>>>> cc2a5eae3d727e660f30d7a17c06925f0bd02c41
 ###< symfony/webpack-encore-pack ###
 
 ###> symfony/phpunit-bridge ###

@@ -1,4 +1,7 @@
     <div class="container text">
+        <div class="pull-right">
+            <input class="form-control" id="myInputList" type="text" placeholder="pesquisar...">
+        </div>
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-list" id="text"></span> Lista de Faculdades
@@ -8,7 +11,7 @@
                 </div>
             </div>
             <div class="panel-body">
-                <ul class="list-group">
+                <ul class="list-group" id="myList">
                     {% for faculdade in faculdades %}
                         {% if faculdade.id != null %}
                             <li class="list-group-item">
