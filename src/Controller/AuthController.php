@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AuthController extends Controller
 {
     /**
-     * @Route("/", name="index")
+     * @Route("/index", name="index")
      */
     public function indexAction()
     {
