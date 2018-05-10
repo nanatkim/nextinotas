@@ -27,8 +27,8 @@ class RegistrationController extends Controller
             $user->setPassword($password);
 
             // Set their role
-            //$user->setRole('ROLE_USER');
-            $user->setRole('ROLE_ADM');
+            $user->setRole('ROLE_USER');
+            //$user->setRole('ROLE_ADM');
 
             // Set Professor
 
@@ -43,10 +43,17 @@ class RegistrationController extends Controller
                 }
             }
 
-            // Save
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+            if($user->getProfessor()!=null){
+                // Save
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+            } else {
+                $this->addFlash(
+                    'error',
+                    'Você não tem permissão para se cadastrar nesse sistema!'
+                );
+            }
 
             return $this->redirectToRoute('index');
         }
