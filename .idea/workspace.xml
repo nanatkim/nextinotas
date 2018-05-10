@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8026eff8-4dd1-4fa1-acea-f97e40c862f4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/HerokuDatabase.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/nextinotas.iml" afterPath="$PROJECT_DIR$/.idea/nextinotas.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/HerokuDatabase.php" afterPath="$PROJECT_DIR$/src/HerokuDatabase.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,8 +74,8 @@
       <file leaf-file-name="HerokuDatabase.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HerokuDatabase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+            <state relative-caret-position="51">
+              <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -436,12 +433,12 @@
       <workItem from="1525368690268" duration="2264000" />
       <workItem from="1525714567464" duration="8699000" />
       <workItem from="1525800859643" duration="16586000" />
-      <workItem from="1525975883756" duration="2514000" />
+      <workItem from="1525975883756" duration="2585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137794000" />
+    <option name="totallyTimeSpent" value="137865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -865,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HerokuDatabase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+        <state relative-caret-position="51">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
           <folding />
         </state>
       </provider>

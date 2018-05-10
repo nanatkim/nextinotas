@@ -1,6 +1,8 @@
 <?php
 // src/HerokuDatabase.php
 
+namespace App;
+
 class HerokuDatabase
 {
     public static function populateEnvironment(Event $event)
