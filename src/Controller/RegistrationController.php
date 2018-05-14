@@ -20,7 +20,16 @@ class RegistrationController extends Controller
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
+        $this->addFlash(
+            'error',
+            'Sim!'
+        );
+
         if ($form->isSubmitted() && $form->isValid()) {
+            $this->addFlash(
+                'error',
+                'Submitted!'
+            );
             // Encode the new users password
             $encoder = $this->get('security.password_encoder');
             $password = $encoder->encodePassword($user, $user->getPlainPassword());
@@ -31,7 +40,6 @@ class RegistrationController extends Controller
             //$user->setRole('ROLE_ADM');
 
             // Set Professor
-
             $professor = $this->getDoctrine()
                 ->getRepository('App:Professor')
                 ->findByFaculdade($form->get('faculdade')->getData());
