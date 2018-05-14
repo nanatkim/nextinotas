@@ -9,8 +9,7 @@
                     {{ error.messageKey|trans(error.messageData) }}
                 </div>
             {% endif %}
-            <div class="circle-tile-heading2 dark-blue centroLogin">
-            </div>
+            <div class="circle-tile-heading2 dark-blue centroLogin"></div>
             <form class="form-horizontal" role="form" method="POST" action="{{ path('security_login_check') }}">
                 <div class="boxlogin">
                     <h4 class="textWhite">Sistema de Notas</h4>
@@ -20,11 +19,11 @@
                     <input type="password" id="senha" name="_password" class="form-control" placeholder="Senha"/>
                     <br>
                     <div class="wrapper">
-            <span class="group-btn">
-                <button type="submit" class="btn btn-primary btn-md">Entrar <i class="fa fa-sign-in"></i></button>
-            </span>
+                        <span class="group-btn">
+                            <button type="submit" class="btn btn-primary btn-md">Entrar <i class="fa fa-sign-in"></i></button>
+                        </span>
                     </div>
-                    </br>
+                    <br>
                     <div class="wrapper">
                         <span class="group-btn">
                             <a href="{{ path('register') }}" class="btn btn-primary btn-md">Cadastrar <i class="fa fa-sign-up"></i></a>
@@ -38,6 +37,5 @@
     {#<a href="{{ path('faculdade_new') }}">faculdade</a>#}
     <a href="{{ path('professor_new', {'facul':1}) }}">professor</a>
     <a href="{{ path('user_index', {'facul':1}) }}">users</a>
-</div>
 </div>
 {% endblock %}
