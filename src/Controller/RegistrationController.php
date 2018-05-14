@@ -36,23 +36,34 @@ class RegistrationController extends Controller
                 ->getRepository('App:Professor')
                 ->findByFaculdade($form->get('faculdade')->getData());
 
-            foreach ($professor as $prof ){
-                if($prof->getEmail() == $form->get('email')->getData()){
-                    $user->setProfessor($prof);
-                    break;
-                }
-            }
+            $userRepetido = $this->getDoctrine()
+                ->getRepository('App:User')
+                ->findByEmail($form->get('email')->getData());
 
-            if($user->getProfessor()!=null){
-                // Save
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($user);
-                $em->flush();
-            } else {
+            if($user!=null){
                 $this->addFlash(
                     'error',
-                    'Você não tem permissão para se cadastrar nesse sistema!'
+                    'Já existe um professor cadastrado com esse email!'
                 );
+            } else {
+                foreach ($professor as $prof ){
+                    if($prof->getEmail() == $form->get('email')->getData()){
+                        $user->setProfessor($prof);
+                        break;
+                    }
+                }
+
+                if($user->getProfessor()!=null){
+                    // Save
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($user);
+                    $em->flush();
+                } else {
+                    $this->addFlash(
+                        'error',
+                        'Você não tem permissão para se cadastrar nesse sistema!'
+                    );
+                }
             }
 
             return $this->redirectToRoute('index');
