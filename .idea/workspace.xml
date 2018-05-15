@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8026eff8-4dd1-4fa1-acea-f97e40c862f4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" afterPath="$PROJECT_DIR$/config/packages/security.yaml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FaculdadeController.php" afterPath="$PROJECT_DIR$/src/Controller/FaculdadeController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Faculdade.php" afterPath="$PROJECT_DIR$/src/Entity/Faculdade.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Professor.php" afterPath="$PROJECT_DIR$/src/Entity/Professor.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/Usuario.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" afterPath="$PROJECT_DIR$/src/Form/UserType.php" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" />
+      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,12 +73,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="security.yaml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="security.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostgreSqlSchemaManager.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="334" column="5" lean-forward="false" selection-start-line="334" selection-start-column="5" selection-end-line="334" selection-end-column="5" />
+              <folding>
+                <marker date="1526410445982" expanded="true" signature="2031:2140" ph="SELECT nspna... pg_namespace" />
+                <marker date="1526410445982" expanded="true" signature="7133:7269" ph="SELECT attnu... pg_attribute" />
+                <marker date="1526410445982" expanded="true" signature="9653:9689" ph="SELECT min_v... ${$this-&gt;_platform-&gt;quoteIdentifier($sequenceName)}" />
+                <marker date="1526410445982" expanded="true" signature="10330:10428" ph="SELECT min_v... pg_sequences" />
+                <marker date="1526410445982" expanded="true" signature="10544:10580" ph="SELECT min_v... ${$this-&gt;_platform-&gt;quoteIdentifier($sequenceName)}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,7 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity/AvAluno.php" />
         <option value="$PROJECT_DIR$/src/Security/FormLoginAuthenticator.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
@@ -179,6 +185,7 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Entity/Usuario.php" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
+        <option value="$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php" />
       </list>
     </option>
   </component>
@@ -385,6 +392,62 @@
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dbal" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dbal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dbal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dbal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="DBAL" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dbal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="DBAL" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Schema" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -452,12 +515,12 @@
       <workItem from="1525800859643" duration="16586000" />
       <workItem from="1525975883756" duration="6491000" />
       <workItem from="1526318335625" duration="6793000" />
-      <workItem from="1526404635835" duration="4487000" />
+      <workItem from="1526404635835" duration="5481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153051000" />
+    <option name="totallyTimeSpent" value="154045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -518,16 +581,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/AvAlunoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/media.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
@@ -889,6 +942,20 @@
         <state relative-caret-position="51">
           <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/dbal/lib/Doctrine/DBAL/Schema/PostgreSqlSchemaManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="334" column="5" lean-forward="false" selection-start-line="334" selection-start-column="5" selection-end-line="334" selection-end-column="5" />
+          <folding>
+            <marker date="1526410445982" expanded="true" signature="2031:2140" ph="SELECT nspna... pg_namespace" />
+            <marker date="1526410445982" expanded="true" signature="7133:7269" ph="SELECT attnu... pg_attribute" />
+            <marker date="1526410445982" expanded="true" signature="9653:9689" ph="SELECT min_v... ${$this-&gt;_platform-&gt;quoteIdentifier($sequenceName)}" />
+            <marker date="1526410445982" expanded="true" signature="10330:10428" ph="SELECT min_v... pg_sequences" />
+            <marker date="1526410445982" expanded="true" signature="10544:10580" ph="SELECT min_v... ${$this-&gt;_platform-&gt;quoteIdentifier($sequenceName)}" />
+          </folding>
         </state>
       </provider>
     </entry>
