@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Faculdade
 {
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="faculdade", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="Usuario", mappedBy="faculdade", cascade={"persist","remove"})
      */
     private $user;
 

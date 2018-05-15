@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Entity\Professor;
-use App\Entity\User;
+use App\Entity\Usuario;
 use App\Form\UserType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,7 +16,7 @@ class RegistrationController extends Controller
     public function registerAction(Request $request)
     {
         // Create a new blank user and process the form
-        $user = new User();
+        $user = new Usuario();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 

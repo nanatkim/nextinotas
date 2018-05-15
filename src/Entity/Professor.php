@@ -12,7 +12,7 @@ class Professor
 {
 
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="professor", cascade={"persist","remove"})
+     * @ORM\OneToMany(targetEntity="Usuario", mappedBy="professor", cascade={"persist","remove"})
      */
     private $user;
 

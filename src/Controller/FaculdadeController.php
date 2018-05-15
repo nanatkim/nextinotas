@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Faculdade;
-use App\Entity\User;
+use App\Entity\Usuario;
 use App\Form\FaculdadeType;
 use App\Repository\FaculdadeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -55,7 +55,7 @@ class FaculdadeController extends Controller
     /**
      * @Route("/{id}/{user}/", name="faculdade_show", methods="GET")
      */
-    public function show(Faculdade $faculdade, User $user): Response
+    public function show(Faculdade $faculdade, Usuario $user): Response
     {
         $professor = $this->getDoctrine()
             ->getRepository('App:Professor')
@@ -84,7 +84,7 @@ class FaculdadeController extends Controller
             ->getRepository('App:Disciplina')
             ->findByFaculdade($faculdade->getId());
         $user = $this->getDoctrine()
-            ->getRepository('App:User')
+            ->getRepository('App:Usuario')
             ->findAll();
 
         return $this->render('/faculdade/show.html.twig',[

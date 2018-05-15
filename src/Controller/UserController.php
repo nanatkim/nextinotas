@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\User;
+use App\Entity\Usuario;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,7 +14,7 @@ class UserController extends Controller
     public function viewUserAction(int $facul)
     {
         $user = $this->getDoctrine()
-            ->getRepository('App:User')
+            ->getRepository('App:Usuario')
             ->findAll();
 
             $faculdade = $this->getDoctrine()
