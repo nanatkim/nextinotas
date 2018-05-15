@@ -27,8 +27,8 @@ class RegistrationController extends Controller
             $user->setPassword($password);
 
             // Set their role
-            $user->setRole('ROLE_USER');
-            //$user->setRole('ROLE_ADM');
+            //$user->setRole('ROLE_USER');
+            $user->setRole('ROLE_ADM');
 
             // Set Professor
             $professor = $this->getDoctrine()
