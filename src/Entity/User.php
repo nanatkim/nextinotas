@@ -44,7 +44,7 @@ class User implements UserInterface
     private $professor;
 
     /**
-     * @ORM\Column(name="name",type="string", length=50)
+     * @ORM\Column(name="role",type="string", length=50)
      */
     protected $role;
 
