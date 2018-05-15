@@ -22,12 +22,12 @@ class User implements UserInterface
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=255, unique=true)
      */
     protected $email;
 
     /**
-     * @ORM\Column(type="string", length=40)
+     * @ORM\Column(name="name",type="string", length=40)
      */
     protected $name;
 
@@ -44,7 +44,7 @@ class User implements UserInterface
     private $professor;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(name="name",type="string", length=50)
      */
     protected $role;
 
@@ -54,7 +54,7 @@ class User implements UserInterface
     protected $plainPassword;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(name="password", type="string", length=64)
      */
     protected $password;
 
