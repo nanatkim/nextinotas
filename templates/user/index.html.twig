@@ -29,6 +29,13 @@
                                              aria-expanded="false" aria-controls="collapseExample{{ us.id }}">
                                             <label>{{ us.name }}</label>
                                         </div>
+                                        {% if is_granted('ROLE_ADM') %}
+                                            <div class="col-md-1 pull-right action-buttons">
+                                                <a href="{{ path('user_delete', {'id': us.id, 'facul': faculdade.id}) }}" class="trash">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </a>
+                                            </div>
+                                        {% endif %}
                                     </div>
                                     <div class="collapse" id="collapseExample{{ us.id }}">
                                         <div class="card card-block">
