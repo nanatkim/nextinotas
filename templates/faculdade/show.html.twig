@@ -4,7 +4,7 @@
 
 {% block body %}
     {% if is_granted('ROLE_ADM') %}
-        <a class="btn btn-default text" href="/">voltar</a>
+        <a class="btn btn-default text" href="{{ path('faculdade_index') }}">voltar</a>
     {% endif %}
     <hr>
     <div class="row text">
