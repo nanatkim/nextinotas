@@ -4,7 +4,6 @@ html {
 }
 body {
 	/* Margin bottom by footer height */
-	margin-bottom: 20%;
     min-height: 100vh;
 }
 
@@ -18,7 +17,7 @@ body {
     clear: both;
     position: relative; z-index: 10;
     height: 3em;
-    margin-top: 2em;
+    margin-top: 0.5em;
     line-height: 60px; /* Vertically center the text there */
 }
 
