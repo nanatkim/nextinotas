@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8026eff8-4dd1-4fa1-acea-f97e40c862f4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/public/js/media.js" afterPath="$PROJECT_DIR$/public/js/media.js" />
       <change beforePath="$PROJECT_DIR$/public/web/style.css" afterPath="$PROJECT_DIR$/public/web/style.css" />
-      <change beforePath="$PROJECT_DIR$/templates/avbase/index.html.twig" afterPath="$PROJECT_DIR$/templates/avbase/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/templates/turma/index.html.twig" afterPath="$PROJECT_DIR$/templates/turma/index.html.twig" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,11 +34,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+            <state relative-caret-position="51">
+              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="media.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/media.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/web/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/avaluno/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -47,38 +77,18 @@
       <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user/login.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="220">
               <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/turma/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/faculdade/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="70" lean-forward="false" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/avbase/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="17">
+              <caret line="1" column="85" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -110,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity/Faculdade.php" />
         <option value="$PROJECT_DIR$/src/Form/UserType.php" />
         <option value="$PROJECT_DIR$/templates/turma/form.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/TurmaType.php" />
@@ -152,15 +161,16 @@
         <option value="$PROJECT_DIR$/templates/aluno/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/user/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/user/login.html.twig" />
         <option value="$PROJECT_DIR$/templates/faculdade/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/faculdade/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/turma/show.html.twig" />
-        <option value="$PROJECT_DIR$/templates/avaluno/show.html.twig" />
-        <option value="$PROJECT_DIR$/public/web/style.css" />
         <option value="$PROJECT_DIR$/templates/avbase/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/turma/index.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/media.js" />
+        <option value="$PROJECT_DIR$/templates/avaluno/show.html.twig" />
+        <option value="$PROJECT_DIR$/public/web/style.css" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
       </list>
     </option>
   </component>
@@ -308,6 +318,12 @@
               <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
               <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="nextinotas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nextinotas" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -424,12 +440,12 @@
       <workItem from="1525975883756" duration="6491000" />
       <workItem from="1526318335625" duration="6793000" />
       <workItem from="1526404635835" duration="22563000" />
-      <workItem from="1526924622600" duration="1606000" />
+      <workItem from="1526924622600" duration="4016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172733000" />
+    <option name="totallyTimeSpent" value="175143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -490,21 +506,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-185">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/turmaluno/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -596,13 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="75" column="73" lean-forward="false" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -761,14 +755,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="38" column="43" lean-forward="false" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -790,33 +776,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/avaluno/show.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/turma/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/faculdade/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="70" lean-forward="false" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/web/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        <state relative-caret-position="342">
+          <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -829,10 +792,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/turma/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/faculdade/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+        <state relative-caret-position="17">
+          <caret line="6" column="70" lean-forward="false" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/avaluno/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="85" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/avaluno/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/media.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/web/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding />
         </state>
       </provider>

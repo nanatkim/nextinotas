@@ -5,6 +5,7 @@ html {
 body {
 	/* Margin bottom by footer height */
 	margin-bottom: 20%;
+    min-height: 100vh;
 }
 
 #tam {

@@ -22,7 +22,6 @@ for(var count = 0; count < alunos.length; count++){ //for each para listar um de
             count1 += 1;
             var av1 = av1s[i].textContent;
             var pesinho = pesoAv1[i].textContent;
-            av1 = av1*(pesinho/10);
             contAv1 += parseFloat(av1);
     }
 
@@ -33,7 +32,7 @@ for(var count = 0; count < alunos.length; count++){ //for each para listar um de
             count2 += 1;
             var av2 = av2s[i].textContent;
             var pesinho = pesoAv2[i].textContent;
-            av2 = av2*(pesinho/10);
+
             contAv2 += parseFloat(av2);
             
     }
