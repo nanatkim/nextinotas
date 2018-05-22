@@ -33,9 +33,6 @@
                                         <th class="pesoav2" style="display:none">{{ av.notaMax }}</th>
                                     {% endfor %}
                                     <th class="info">AVPII</th>
-                                    {% for av in avf %}
-                                        <th>{{ av.idTipo.tipo }}</th>
-                                    {% endfor %}
                                     <th>Média</th>
                                     <th class="danger">AVF</th>
                                     <th>Média Final</th>
@@ -71,6 +68,10 @@
                                             <td class="info-avf danger">{{ av.nota }}</td>
                                         {% endif %}
                                     {% endfor %}
+
+                                    {% if avfExist == 2 %}
+                                        <td class="info-avf danger"></td>
+                                    {% endif %}
                                     <td class="mediafinal">0</td>
                                 </tr>
                             {% endfor %}

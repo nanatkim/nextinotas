@@ -3,7 +3,7 @@ var avalunos =  document.querySelector(".Avaluno");
 // . querySelector lista apenas o orimeiro atributo
 
 for(var count = 0; count < alunos.length; count++){ //for each para listar um de cada
-    var aluno = alunos[count];// coloca cada paciente pra ser listado coom o contador
+    var aluno = alunos[count];// coloca cada aluno pra ser listado coom o contador
     var contAv1 = 0;
     var contAv2 = 0;
     var count1 = 0;
@@ -13,15 +13,15 @@ for(var count = 0; count < alunos.length; count++){ //for each para listar um de
     var av1s = aluno.querySelectorAll(".info-av1");
     var av2s = aluno.querySelectorAll(".info-av2");
     var tdAvf = aluno.querySelector(".info-avf");
-    var avf = tdAvf.textContent;
 
-    var pesoAv1 = avalunos.querySelectorAll(".pesoav1");
-    var pesoAv2 = avalunos.querySelectorAll(".pesoav2");
+    var avf = 0;
+    if ($(".tdAvf")[0]){
+        avf = tdAvf.textContent;
+    }
 
     for(var i = 0; i < av1s.length; i++){
             count1 += 1;
             var av1 = av1s[i].textContent;
-            var pesinho = pesoAv1[i].textContent;
             contAv1 += parseFloat(av1);
     }
 
@@ -31,8 +31,6 @@ for(var count = 0; count < alunos.length; count++){ //for each para listar um de
     for(var i = 0; i < av2s.length; i++){
             count2 += 1;
             var av2 = av2s[i].textContent;
-            var pesinho = pesoAv2[i].textContent;
-
             contAv2 += parseFloat(av2);
             
     }
@@ -52,7 +50,7 @@ for(var count = 0; count < alunos.length; count++){ //for each para listar um de
     if(avf == 0 || avf == null){
         mediaFinal.textContent = parseFloat(mediaAvs.textContent).toFixed(2);
     }else{
-        mediaFinal.textContent = ((parseFloat(mediaAvs.textContent) + parseFloat(avf))/2).toFixed(2);
+        mediaFinal.textContent = ((parseFloat(mediaAvs.textContent) + parseFloat(tdAvf.textContent))/2).toFixed(2);
     }
     countAluno = count;
 

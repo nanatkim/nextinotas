@@ -126,11 +126,17 @@ class AvAlunoController extends Controller
 
         $avf = $this->getDoctrine()
             ->getRepository('App:AvBase')
-            ->findBy(array('descricao' => 'AVPF', 'idTurma' => $turma));
+            ->findBy(array('descricao' => 'AVF', 'idTurma' => $turma));
 
         $avaluno = $this->getDoctrine()
             ->getRepository('App:AvAluno')
             ->findByIdAvbase($avbase);
+
+        $avfExist = 1;
+
+        if(empty($avfExist)){
+            $avfExist = 2;
+        }
 
         return $this->render('avaluno/show.html.twig', [
             'avaluno'=>$avaluno,
@@ -139,7 +145,8 @@ class AvAlunoController extends Controller
             'avp1' => $avp1,
             'avp2' => $avp2,
             'avf' => $avf,
-            'turma'=>$turma
+            'turma'=>$turma,
+            'avfExist' => $avfExist
         ]);
     }
 }
