@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <span class="glyphicon glyphicon-list"></span>Lista de Alunos
+                        <span class="glyphicon glyphicon-list"></span>
                         {% if is_granted('ROLE_ADM') %}
                             <div class="pull-right">
                                 <a href="{{ path('aluno_new', {'facul': faculdade.id}) }}"><img src="{{ asset('web/add.png') }}"
