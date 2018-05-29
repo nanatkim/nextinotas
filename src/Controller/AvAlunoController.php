@@ -72,35 +72,28 @@ class AvAlunoController extends Controller
      */
     public function edit(Request $request,AvBase $avbase,Faculdade $facul, Turma $turma, AvAluno $id): Response
     {
+
+        //$nota = $request->request->get('_nota');
+        $nota = $request->query->get('_nota');
+
         $avaluno = $this->getDoctrine()
             ->getRepository('App:AvAluno')
             ->find($id);
 
-        $form = $this->createForm(AvAlunoType::class, $avaluno);
-        $form->handleRequest($request);
-
-        $nota = $form->get('nota')->getData();
         if($nota > $avbase->getNotaMax()){
             $this->addFlash(
                 'error',
                 'Você não pode dar uma nota maior que '.$avbase->getNotaMax()
             );
         } else {
-            if ($form->isSubmitted() && $form->isValid()) {
-                $em = $this->getDoctrine()->getManager();
-                $em->flush();
+            $avaluno->setNota($nota);
+            $this->getDoctrine()->getManager()->flush();
 
-                return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
-            }
+            return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
         }
 
-        return $this->render('avaluno/form.html.twig', [
-            'aluno'=>$avaluno,
-            'faculdade'=>$facul,
-            'turma'=>$turma,
-            'avbase'=>$avbase,
-            'form' => $form->createView(),
-        ]);
+        return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
+
     }
 
     /**
