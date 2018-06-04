@@ -25,9 +25,9 @@
                             {% for av in avaluno %}
                                 {% if aluno.idAluno.id == av.idAluno.idAluno.id and av.idAvbase.id == avbase.id %}
                                     {#<td>{{ av.nota }}</td>#}
-                                    <td>
+                                    <td scope="row">
                                         <form action="{{ path('avaluno_edit',{'facul':turma.faculdade.id,'avbase':avbase.id,'turma':turma.id,'id':av.id}) }}" method="GET">
-                                            <div class="col-lg-6">
+                                            <div class="col-sm-8">
                                                 <div class="input-group">
                                                     <input type="number" step="0.01" class="form-control" name="_nota" value="{{ av.nota }}">
                                                     <span class="input-group-btn">
@@ -46,7 +46,7 @@
                                 {% set nota = 0 %}
                                 <td>
                                     <form action="{{ path('avaluno_newnew',{'facul':turma.faculdade.id,'avbase':avbase.id,'aluno':aluno.id,'turma':turma.id}) }}" method="GET">
-                                        <div class="col-lg-6">
+                                        <div class="col-sm-8">
                                             <div class="input-group">
                                                 <input type="number" step="0.01" class="form-control" name="_nota" value="{{ nota }}">
                                                 <span class="input-group-btn">
