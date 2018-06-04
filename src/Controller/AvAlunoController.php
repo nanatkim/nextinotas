@@ -68,6 +68,37 @@ class AvAlunoController extends Controller
     }
 
     /**
+     * @Route("/{avbase}/{facul}/{aluno}/{turma}/newnew", name="avaluno_newnew", methods="GET|POST")
+     */
+    public function newnew(Request $request,AvBase $avbase,TurmAluno $aluno,Faculdade $facul, Turma $turma): Response
+    {
+
+        $nota = $request->query->get('_nota');
+
+        $avaluno = new AvAluno();
+        $avaluno->setIdAluno($aluno);
+        $avaluno->setIdAvbase($avbase);
+
+        if($nota > $avbase->getNotaMax()){
+            $this->addFlash(
+                'error',
+                'Você não pode dar uma nota maior que '.$avbase->getNotaMax()
+            );
+        } else {
+
+            $avaluno->setNota($nota);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($avaluno);
+            $em->flush();
+
+            return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
+        }
+
+        return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
+
+    }
+
+    /**
      * @Route("/{avbase}/{facul}/{turma}/{id}/edit", name="avaluno_edit", methods="GET|POST")
      */
     public function edit(Request $request,AvBase $avbase,Faculdade $facul, Turma $turma, AvAluno $id): Response

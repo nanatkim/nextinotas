@@ -21,6 +21,7 @@
                         <tr>
                             <th scope="row">{{ aluno.idAluno.nome }}</th>
                             {#<td>{{ rel.idTurma.disciplina.nome }}</td>#}
+                            {% set found = 0 %}
                             {% for av in avaluno %}
                                 {% if aluno.idAluno.id == av.idAluno.idAluno.id and av.idAvbase.id == avbase.id %}
                                     {#<td>{{ av.nota }}</td>#}
@@ -37,8 +38,27 @@
                                         </form>
                                         {#<a href="{{ path('avaluno_edit',{'facul':turma.faculdade.id,'avbase':avbase.id,'turma':turma.id,'id':av.id}) }}" class="btn btn-default">Nota</a>#}
                                     </td>
+                                    {% set found = 1 %}
                                 {% endif %}
                             {% endfor %}
+
+                            {% if found ==0 %}
+                                {% set nota = 0 %}
+                                <td>
+                                    <form action="{{ path('avaluno_newnew',{'facul':turma.faculdade.id,'avbase':avbase.id,'aluno':aluno.id,'turma':turma.id}) }}" method="GET">
+                                        <div class="col-lg-6">
+                                            <div class="input-group">
+                                                <input type="number" step="0.01" class="form-control" name="_nota" value="{{ nota }}">
+                                                <span class="input-group-btn">
+                                                        <button class="btn btn-default" type="submit">Atualizar</button>
+                                                    </span>
+                                            </div><!-- /input-group -->
+                                        </div>
+                                    </form>
+                                    {#<a href="{{ path('avaluno_edit',{'facul':turma.faculdade.id,'avbase':avbase.id,'turma':turma.id,'id':av.id}) }}" class="btn btn-default">Nota</a>#}
+                                </td>
+                            {% endif %}
+
                         </tr>
                     {% endfor %}
                     </tbody>
