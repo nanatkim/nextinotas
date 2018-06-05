@@ -55,14 +55,29 @@
             {% for flash_message in app.session.flashbag.get('error') %}
                 <br>
                 <div class="col-md-6 col-md-offset-3">
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger fade in">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
+                        {{flash_message}}
+                    </div>
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('notice') %}
+                <br>
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="alert alert-success fade in">
+                        <a href="#" class="close" data-dismiss="alert">&times;</a>
                         {{flash_message}}
                     </div>
                 </div>
             {% endfor %}
         </div>
         <div class="row">
-            {% block body %}{% endblock %}  
+            {#{% if app.user == null %}#}
+                {#{{ render (controller('App\\Controller\\SecurityController::loginAction')) }}#}
+            {#{% else %}#}
+                {% block body %}
+                {% endblock %}
+            {#{% endif %}#}
         </div>
     </div>
 </div>

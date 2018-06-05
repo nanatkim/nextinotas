@@ -91,6 +91,11 @@ class AvAlunoController extends Controller
             $em->persist($avaluno);
             $em->flush();
 
+            $this->addFlash(
+                'notice',
+                'Nota atualizada'
+            );
+
             return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
         }
 
@@ -119,6 +124,11 @@ class AvAlunoController extends Controller
         } else {
             $avaluno->setNota($nota);
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash(
+                'notice',
+                'Nota atualizada'
+            );
 
             return $this->redirectToRoute('avbase_show',array('facul'=>$facul->getId(), 'tur'=>$turma->getId(),'id'=>$avbase->getId()));
         }

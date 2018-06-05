@@ -24,13 +24,11 @@
                                     <th>Nome</th>
                                     <!-- for do av_tipo}}-->
                                     {% for av in avp1 %}
-                                    <th class="tipoAv">{{ av.idTipo.tipo }}</th>
-                                    <th class="pesoav1" style="display:none">{{ av.notaMax }}</th>
+                                    <th>{{ av.idTipo.tipo }}</th>
                                     {% endfor %}
                                     <th class="info">AVPI</th>
                                     {% for av in avp2 %}
-                                        <th class="tipoAv">{{ av.idTipo.tipo }}</th>
-                                        <th class="pesoav2" style="display:none">{{ av.notaMax }}</th>
+                                        <th>{{ av.idTipo.tipo }}</th>
                                     {% endfor %}
                                     <th class="info">AVPII</th>
                                     <th>Média</th>
