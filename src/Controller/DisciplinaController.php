@@ -25,6 +25,8 @@ class DisciplinaController extends Controller
             ->find($facul);
 
         $disciplina = $disciplinaRepository->findByFaculdade($facul);
+        uasort($disciplina, function($a, $b) { return strcmp($a->getNome(), $b->getNome()); } );
+
         return $this->render('disciplina/index.html.twig', [
             'disciplinas' => $disciplina,
             'faculdade' => $faculdade,

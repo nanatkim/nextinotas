@@ -26,6 +26,8 @@ class TurmAlunoController extends Controller
 
         $turmalunos = $turmAlunoRepository->findByIdTurma($tur);
 
+        uasort($turmalunos, function($a, $b) { return strcmp($a->getIdAluno()->getNome(), $b->getIdAluno()->getNome()); } );
+
         return $this->render('turmaluno/index.html.twig', [
             'turmalunos' => $turmalunos,
             'tur'=>$tur,

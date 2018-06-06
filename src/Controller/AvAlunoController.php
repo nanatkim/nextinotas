@@ -174,6 +174,8 @@ class AvAlunoController extends Controller
             ->getRepository('App:AvAluno')
             ->findByIdAvbase($avbase);
 
+        uasort($turmaluno, function($a, $b) { return strcmp($a->getIdAluno()->getNome(), $b->getIdAluno()->getNome()); } );
+
         $avfExist = 1;
 
         if(empty($avfExist)){

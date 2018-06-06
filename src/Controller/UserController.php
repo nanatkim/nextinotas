@@ -18,9 +18,11 @@ class UserController extends Controller
             ->getRepository('App:Usuario')
             ->findAll();
 
-            $faculdade = $this->getDoctrine()
-                ->getRepository('App:Faculdade')
-                ->find($facul);
+        uasort($user, function($a, $b) { return strcmp($a->getName(), $b->getName()); } );
+
+        $faculdade = $this->getDoctrine()
+            ->getRepository('App:Faculdade')
+            ->find($facul);
 
         return $this->render('/user/index.html.twig',[
             'users' => $user,

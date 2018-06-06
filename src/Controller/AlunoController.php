@@ -28,6 +28,8 @@ class AlunoController extends Controller
 
         $alunos = $alunoRepository->findByFaculdade($facul);
 
+        uasort($alunos, function($a, $b) { return strcmp($a->getNome(), $b->getNome()); } );
+
         return $this->render('aluno/index.html.twig', [
             'alunos' => $alunos,
             'faculdade' => $faculdade,

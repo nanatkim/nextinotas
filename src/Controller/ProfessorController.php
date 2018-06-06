@@ -26,6 +26,8 @@ class ProfessorController extends Controller
 
         $professors = $professorRepository->findByFaculdade($facul);
 
+        uasort($professors, function($a, $b) { return strcmp($a->getNome(), $b->getNome()); } );
+
         return $this->render('professor/index.html.twig', [
             'professors' => $professors,
             'faculdade' => $faculdade,

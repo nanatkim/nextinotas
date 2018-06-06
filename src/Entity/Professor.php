@@ -106,6 +106,16 @@ class Professor
         return $this;
     }
 
+    /**
+     * Get nome
+     *
+     * @return string
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
 
     /**
      * Set turmas
@@ -129,16 +139,6 @@ class Professor
     public function getTurmas()
     {
         return $this->turmas;
-    }
-
-    /**
-     * Get nome
-     *
-     * @return string
-     */
-    public function getNome()
-    {
-        return $this->nome;
     }
 
     /**

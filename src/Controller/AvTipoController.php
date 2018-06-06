@@ -25,6 +25,7 @@ class AvTipoController extends Controller
             ->find($facul);
 
         $avtipos = $avTipoRepository->findByFaculdade($facul);
+        uasort($avtipos, function($a, $b) { return strcmp($a->getTipo(), $b->getTipo()); } );
 
         return $this->render('avtipo/index.html.twig', [
             'avtipos' => $avtipos,
