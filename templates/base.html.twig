@@ -72,12 +72,11 @@
             {% endfor %}
         </div>
         <div class="row">
-            {#{% if app.user == null %}#}
-                {#{{ render (controller('App\\Controller\\SecurityController::loginAction')) }}#}
-            {#{% else %}#}
-                {% block body %}
-                {% endblock %}
-            {#{% endif %}#}
+            {% if app.user == null %}
+                {{ render (controller('App\\Controller\\SecurityController::loginAction')) }}
+            {% else %}
+                {% block body %}{% endblock %}
+            {% endif %}
         </div>
     </div>
 </div>
