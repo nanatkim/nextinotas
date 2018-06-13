@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8026eff8-4dd1-4fa1-acea-f97e40c862f4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/public/js/media.js" afterPath="$PROJECT_DIR$/public/js/media.js" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AvAlunoController.php" afterPath="$PROJECT_DIR$/src/Controller/AvAlunoController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,8 +64,8 @@
       <file leaf-file-name="media.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/media.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="50" column="77" lean-forward="false" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="77" />
+            <state relative-caret-position="492">
+              <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -408,12 +406,12 @@
       <workItem from="1528232754002" duration="3934000" />
       <workItem from="1528319686058" duration="4504000" />
       <workItem from="1528828967421" duration="3760000" />
-      <workItem from="1528917747268" duration="420000" />
+      <workItem from="1528917747268" duration="1225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213637000" />
+    <option name="totallyTimeSpent" value="214442000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -849,8 +847,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/media.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="50" column="77" lean-forward="false" selection-start-line="50" selection-start-column="77" selection-end-line="50" selection-end-column="77" />
+        <state relative-caret-position="492">
+          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
           <folding />
         </state>
       </provider>

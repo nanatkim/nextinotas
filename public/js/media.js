@@ -47,14 +47,17 @@ for(var count = 0; count < alunos.length; count++){ //for each para listar um de
     var mediafinal = mediaFinal.textContent;
 
 
-    if(avf == 0){
-        mediaFinal.textContent = parseFloat(mediaAvs.textContent).toFixed(2);
-    } else {
+    if(tdAvf.textContent){
         if(tdAvf.textContent == 0 || tdAvf.textContent == null){
             mediaFinal.textContent = parseFloat(mediaAvs.textContent).toFixed(2);
+            console.log("não");
         }else{
+            console.log("sim");
             mediaFinal.textContent = ((parseFloat(mediaAvs.textContent) + parseFloat(tdAvf.textContent))/2).toFixed(2);
         }
+    } else {
+        console.log("what");
+        mediaFinal.textContent = parseFloat(mediaAvs.textContent).toFixed(2);
     }
     countAluno = count;
 }
