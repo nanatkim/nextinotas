@@ -178,7 +178,7 @@ class AvAlunoController extends Controller
 
         $avfExist = 1;
 
-        if(empty($avfExist)){
+        if(empty($avf)){
             $avfExist = 2;
         }
 
